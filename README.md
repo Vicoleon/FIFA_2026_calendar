@@ -89,6 +89,6 @@ supabase/schema.sql         # respaldo del esquema de base de datos
 
 ## ⚠️ Notas
 
-- Los equipos y grupos corresponden al **sorteo final** del Mundial 2026. Las **sedes y horarios de la fase de grupos** están marcados como *“Por definir”* para que los ajustes tú mismo; el **cuadro de eliminatorias** (sedes y fechas) sigue el calendario oficial. Todo es **editable en línea**.
+- Los equipos, grupos y el **calendario oficial completo de la fase de grupos** (72 partidos con sede, fecha y hora local) corresponden al sorteo final del Mundial 2026; el **cuadro de eliminatorias** (sedes y fechas) sigue el calendario oficial. Todo es **editable en línea** por si la FIFA ajusta algún horario.
 - La resolución de los "mejores terceros" usa una heurística por puntos/diferencia de gol; puedes corregir cualquier cruce manualmente desde el editor.
 - Las claves de Supabase incluidas son **públicas por diseño** (publishable/anon). La seguridad real vive en las políticas RLS de la base.
