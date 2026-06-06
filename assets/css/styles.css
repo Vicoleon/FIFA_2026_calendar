@@ -92,6 +92,13 @@ body {
 .loading { color: var(--mut); text-align: center; padding: 60px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
 
+/* filtro por grupo */
+.gfilter { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 20px; }
+.gf-label { color: var(--mut); font-size: 11px; font-weight: 700; margin-right: 6px; text-transform: uppercase; letter-spacing: 1px; }
+.gf-chip { background: var(--card2); color: var(--txt); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; cursor: pointer; font-weight: 700; font-size: 13px; }
+.gf-chip:hover { border-color: var(--acc); }
+.gf-chip.on { background: var(--acc); color: var(--on-acc); border-color: var(--acc); }
+
 /* groups */
 .group, .round, .day { margin-bottom: 34px; }
 .group h3, .round h3, .day h3 {

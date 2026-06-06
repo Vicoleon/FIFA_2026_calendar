@@ -20,7 +20,7 @@ const TOURNAMENT_START = new Date("2026-06-11T00:00:00"); // el botón "Hoy" apa
 const state = {
   teams: [], teamMap: {}, matches: [], stats: {}, goals: {},
   ratings: {}, predictions: {}, session: null, view: "grupos",
-  showPred: true, todayOnly: false, projection: false
+  showPred: true, todayOnly: false, projection: false, groupFilter: null
 };
 
 // ¿ya empezó el Mundial? (según el reloj del dispositivo)
@@ -276,8 +276,14 @@ function matchCard(m) {
 }
 
 // ---------- vistas ----------
+function groupFilterBar() {
+  const chips = ["", ...GROUPS].map((v) =>
+    `<button class="gf-chip ${(state.groupFilter || "") === v ? "on" : ""}" data-gf="${v}">${v || "Todos"}</button>`).join("");
+  return `<div class="gfilter"><span class="gf-label">Filtrar por grupo</span>${chips}</div>`;
+}
 function renderGroups() {
-  return GROUPS.map((g) => {
+  return groupFilterBar() + GROUPS.map((g) => {
+    if (state.groupFilter && g !== state.groupFilter) return "";
     const gm = visibleMatches(state.matches.filter((m) => m.stage === "group" && m.group_code === g));
     if (state.todayOnly && gm.length === 0) return ""; // sin partidos hoy → oculta el grupo
     const table = window.Standings.groupTable(state.teams, state.matches, g);
@@ -601,11 +607,14 @@ function wireEvents() {
 
   // delegación de clics en tarjetas
   $("#content").addEventListener("click", (e) => {
-    // clic en un grupo del cuadro → ir a ese grupo en la pestaña Grupos
+    // barra de filtro por grupo
+    const gf = e.target.closest(".gf-chip");
+    if (gf) { state.groupFilter = gf.dataset.gf || null; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+    // clic en un grupo del cuadro → seleccionar ese grupo en la pestaña Grupos
     const kg = e.target.closest(".kb-group");
     if (kg && kg.dataset.group) {
-      state.view = "grupos"; render();
-      document.getElementById("group-" + kg.dataset.group)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      state.view = "grupos"; state.groupFilter = kg.dataset.group; render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     // clic en un slot del cuadro → editar (si eres editor)
