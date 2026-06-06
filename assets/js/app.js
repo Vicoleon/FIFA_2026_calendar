@@ -109,17 +109,21 @@ function predBar(p) {
 
 function matchCard(m) {
   const finished = m.status === "finished";
-  const score = finished
-    ? `<span class="score">${m.home_score} - ${m.away_score}</span>`
+  const live = m.status === "live";
+  const showScore = finished || live;
+  const score = showScore
+    ? `<span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>`
     : `<span class="vs">vs</span>`;
   const hasStats = state.stats[m.id] && Object.keys(state.stats[m.id]).length;
   const editor = !!state.session;
 
   return `
-  <article class="card ${finished ? "card--done" : ""}" data-mid="${m.id}">
+  <article class="card ${finished ? "card--done" : ""} ${live ? "card--live" : ""}" data-mid="${m.id}">
     <header class="card-top">
       <span class="mno">M${m.id} · ${STAGE_LABEL[m.stage]}${m.group_code ? " " + m.group_code : ""}</span>
-      <span class="mvenue">📍 ${esc(m.venue || "Por definir")}</span>
+      ${live
+        ? `<span class="live-badge">● EN VIVO${m.minute != null ? " " + m.minute + "'" : ""}</span>`
+        : `<span class="mvenue">📍 ${esc(m.venue || "Por definir")}</span>`}
     </header>
     <div class="card-mid">
       ${teamChip(m._home, m.home_placeholder)}
@@ -133,7 +137,7 @@ function matchCard(m) {
         ${editor ? `<button class="lnk" data-act="edit">✏️ Editar</button>` : ""}
       </span>
     </footer>
-    ${state.showPred && !finished ? predBar(m._pred) : ""}
+    ${state.showPred && !showScore ? predBar(m._pred) : ""}
     <div class="stats-panel" hidden></div>
   </article>`;
 }
@@ -373,9 +377,18 @@ function wireEvents() {
     .subscribe();
 }
 
+// ---------- datos en vivo (proxy football-data vía Edge Function) ----------
+async function syncLive() {
+  // Llama al proxy: si hay partidos en curso, actualiza la BD y Realtime
+  // refresca la UI automáticamente. Fuera de horario de partidos sale barato.
+  try { await db.functions.invoke("live-scores"); } catch (_) { /* sin red / sin token: ignora */ }
+}
+
 (async function init() {
   wireEvents();
   const { data } = await db.auth.getSession();
   state.session = data.session;
   await refresh();
+  syncLive();
+  setInterval(syncLive, 60000); // sondea cada minuto
 })();

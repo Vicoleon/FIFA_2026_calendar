@@ -70,6 +70,33 @@ Parámetros ajustables en `assets/js/config.js` (`PREDICTOR`).
 
 ---
 
+## 🔴 Datos en vivo (automáticos)
+
+Cuando un partido está en curso, la app trae el marcador (y el minuto) desde
+**football-data.org** y los muestra solos (tarjeta "● EN VIVO"), sincronizados en
+todos los dispositivos.
+
+Arquitectura: el frontend NO llama a la API externa directamente (sería inseguro y
+la bloquea CORS). En su lugar llama cada 60 s a una **Supabase Edge Function**
+(`live-scores`) que actúa de proxy: lee el token desde un secreto, consulta la API,
+mapea los equipos y actualiza la tabla `matches`. Realtime hace el resto.
+
+> ⚠️ **Importante sobre el plan de football-data.org:**
+> - El plan **Free (€0)** entrega los marcadores **con retraso** (no en tiempo real):
+>   los partidos se actualizan solos pero con demora, no minuto a minuto.
+> - Para marcadores **realmente en vivo** necesitas el plan **"Free w/ Livescores" (€12/mes)**.
+>   El código es idéntico: solo cambias de plan con el mismo token, sin tocar nada.
+
+**Configurar (una vez):**
+1. Token en https://www.football-data.org/client/register
+2. Supabase → tu proyecto → **Edge Functions → Secrets** → nuevo secreto:
+   - Nombre: `FOOTBALL_DATA_TOKEN` · Valor: tu token
+3. ¡Listo! Fuera de horario de partidos la función sale barato (no gasta cuota).
+
+Probar el mapeo sin esperar a un partido: abre en el navegador
+`https://<tu-proyecto>.supabase.co/functions/v1/live-scores?debug=1`
+(devuelve el JSON de los partidos que reconoce, sin escribir nada).
+
 ## 🗂️ Estructura
 
 ```
