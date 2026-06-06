@@ -101,6 +101,25 @@ Probar el mapeo sin esperar a un partido: abre en el navegador
 `https://<tu-proyecto>.supabase.co/functions/v1/live-scores?debug=1`
 (devuelve el JSON de los partidos que reconoce, sin escribir nada).
 
+## 📊 Estadísticas automáticas (ESPN) — gratis
+
+Las estadísticas detalladas (posesión, tiros, tiros a puerta, córners, faltas,
+tarjetas) **y los goleadores** se obtienen de la **API pública no oficial de ESPN**
+(gratis, sin llave), vía la Edge Function `sync-espn`, que las escribe en
+`match_stats` y `goals`. Luego el modelo recalcula solo (análisis multivariable).
+
+- **Automatización:** un cron en Supabase (`pg_cron`) ejecuta `sync-espn` **a diario
+  a las 09:00 UTC** (captura los partidos del día anterior con stats finales).
+  Cambia la frecuencia en SQL: `cron.schedule('sync-espn-daily', '*/30 * * * *', …)`.
+- **Validar manualmente** (sin escribir nada), usando el `eventId` de un partido en ESPN:
+  `…/functions/v1/sync-espn?league=fifa.world&event=<ID>`
+- ⚠️ Es una API **no oficial** (sin soporte ni SLA): puede cambiar. Para uso personal
+  es práctica y gratuita. Alternativa "de verdad" con más detalle (xG real): FBref/Opta (de pago).
+
+> Reparto de fuentes: `live-scores` (football-data) para el marcador en vivo, y
+> `sync-espn` (ESPN) para las **estadísticas + goleadores**. Si prefieres, ESPN solo
+> puede cubrir ambas cosas gratis (avísame y consolido).
+
 ## 🗂️ Estructura
 
 ```
