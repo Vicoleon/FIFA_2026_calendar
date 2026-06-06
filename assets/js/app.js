@@ -34,6 +34,25 @@ function isToday(m) {
 // aplica el filtro "Hoy" si está activo
 const visibleMatches = (arr) => (state.todayOnly ? arr.filter(isToday) : arr);
 
+// ---------- temas intercambiables ----------
+const THEMES = [
+  { id: "neon", name: "Neón" },
+  { id: "fiesta", name: "Fiesta" },
+  { id: "editorial", name: "Editorial" },
+];
+const currentTheme = () => document.documentElement.dataset.theme || "neon";
+function applyTheme(id) {
+  document.documentElement.dataset.theme = id;
+  try { localStorage.setItem("wc-theme", id); } catch (_) {}
+  const t = THEMES.find((x) => x.id === id) || THEMES[0];
+  const btn = document.getElementById("btn-theme");
+  if (btn) btn.textContent = `🎨 ${t.name}`;
+}
+function cycleTheme() {
+  const i = THEMES.findIndex((x) => x.id === currentTheme());
+  applyTheme(THEMES[(i + 1) % THEMES.length].id);
+}
+
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
@@ -441,6 +460,8 @@ function wireEvents() {
   $$(".tab").forEach((t) => t.onclick = () => { state.view = t.dataset.view; render(); });
   $("#btn-login").onclick = loginFlow;
   $("#btn-recalc").onclick = recalcPredictions;
+  $("#btn-theme").onclick = cycleTheme;
+  applyTheme(currentTheme()); // sincroniza la etiqueta del botón con el tema guardado
   $("#btn-today").onclick = () => { state.todayOnly = !state.todayOnly; render(); };
   $("#btn-pred").onclick = () => {
     state.showPred = !state.showPred;

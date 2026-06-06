@@ -6,6 +6,11 @@
   <title>Mundial 2026 — Calendario, Resultados y Pronósticos</title>
   <meta name="description" content="Calendario interactivo de la Copa Mundial FIFA 2026: grupos, eliminatorias, resultados editables en línea, estadísticas por partido y pronósticos automáticos." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;800&family=Poppins:wght@500;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <!-- aplica el tema guardado antes de pintar (evita parpadeo) -->
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('wc-theme')||'neon';}catch(e){document.documentElement.dataset.theme='neon';}</script>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -24,6 +29,7 @@
     </nav>
     <div class="tools">
       <span id="editor-badge" class="badge"></span>
+      <button id="btn-theme" class="btn btn-ghost" title="Cambiar tema visual">🎨 Tema</button>
       <button id="btn-today" class="btn btn-ghost" hidden title="Mostrar solo los partidos de hoy">📅 Hoy</button>
       <button id="btn-pred" class="btn btn-ghost" title="Mostrar/ocultar pronósticos">🔮 Pronósticos</button>
       <button id="btn-recalc" class="btn btn-ghost" hidden title="Recalcular y guardar pronósticos">♻️ Recalcular</button>
