@@ -66,6 +66,9 @@ $$;
 2. Al cargar resultados, los ratings se **recalculan en memoria** replicando los partidos terminados (Elo de fútbol con multiplicador por diferencia de goles). La semilla en la BD no se sobrescribe → el cálculo es determinista.
    - 🏆 **El desempeño dentro del Mundial pesa ×2** (`TOURNAMENT_WEIGHT`): cada resultado del torneo mueve el rating el doble, así que una selección que rinde por encima de lo esperado (efecto *"Costa Rica 2014"*) sube rápido y eso **domina el pronóstico de sus siguientes partidos**. Súbelo a 3–4 para que la forma del torneo pese aún más.
 3. Para cada partido pendiente se derivan los **goles esperados (λ)** de cada lado a partir de la diferencia de Elo (+ ventaja de anfitrión) y se construye una **matriz de Poisson** → probabilidades de 1/X/2 y marcador más probable.
+4. 📈 **Análisis multivariable** (`assets/js/analytics.js`): si un partido tiene estadísticas (tiros, tiros a puerta, posesión, córners, faltas, tarjetas…), se calcula un **xG aproximado** y un **índice de dominio**, y el rating se ajusta por **merecimiento** y no solo por el marcador (un equipo que domina pero empata igual sube). Peso configurable con `PERF_BLEND`.
+
+La vista **Eliminatorias** se dibuja como un **árbol** que converge desde ambos lados hacia la Final en el centro 🏆.
 
 Parámetros ajustables en `assets/js/config.js` (`PREDICTOR`).
 

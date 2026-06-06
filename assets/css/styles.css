@@ -66,6 +66,19 @@ body {
 .gtable tr.qual { background: rgba(0,212,160,.10); }
 .gtable tr.third { background: rgba(255,176,32,.08); }
 
+/* cuadro de eliminatorias tipo árbol */
+.bracket { display: flex; gap: 6px; align-items: stretch; overflow-x: auto; padding-bottom: 14px; }
+.bk-side { display: flex; gap: 6px; align-items: stretch; }
+.bk-col { display: flex; flex-direction: column; min-width: 200px; }
+.bk-label { font-size: 10px; color: var(--mut); text-transform: uppercase; letter-spacing: .6px; text-align: center; padding: 2px 0 8px; border-bottom: 2px solid var(--line); margin-bottom: 10px; }
+.bk-col-body { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 10px; }
+.bk-center { display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 215px; gap: 10px; padding: 0 4px; }
+.bk-trophy { font-size: 42px; filter: drop-shadow(0 3px 10px #000); }
+.bk-center .bk-col { min-width: 205px; width: 100%; }
+.bk-center .bk-label { border-color: var(--acc); color: var(--acc); }
+.bk-center .card { border-color: var(--acc); box-shadow: 0 0 16px rgba(0,212,160,.2); }
+@media (max-width: 760px) { .bk-col, .bk-center, .bk-center .bk-col { min-width: 168px; } }
+
 /* match card */
 .card {
   background: linear-gradient(180deg, var(--card), var(--card2));

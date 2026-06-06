@@ -182,17 +182,50 @@ function renderGroups() {
   }).join("");
 }
 
+// Estructura del cuadro: qué match va en cada lado y columna (según el cuadro oficial).
+// El orden vertical hace que cada par alimente al partido de la siguiente ronda.
+const BRACKET = {
+  left:  { R32: [74,77,73,75,83,84,81,82], R16: [89,90,93,94], QF: [97,98], SF: [101] },
+  right: { R32: [76,78,79,80,86,88,85,87], R16: [91,92,95,96], QF: [99,100], SF: [102] },
+};
+const mById = (id) => state.matches.find((m) => m.id === id);
+function bracketCol(ids, label) {
+  return `<div class="bk-col"><div class="bk-label">${label}</div>
+    <div class="bk-col-body">${ids.map((id) => { const m = mById(id); return m ? matchCard(m) : ""; }).join("")}</div></div>`;
+}
+function renderBracketTree() {
+  const L = BRACKET.left, R = BRACKET.right;
+  return `<div class="bracket">
+    <div class="bk-side">
+      ${bracketCol(L.R32, "Dieciseisavos")}
+      ${bracketCol(L.R16, "Octavos")}
+      ${bracketCol(L.QF, "Cuartos")}
+      ${bracketCol(L.SF, "Semifinal")}
+    </div>
+    <div class="bk-center">
+      <div class="bk-trophy">🏆</div>
+      ${bracketCol([104], "Final")}
+      ${bracketCol([103], "3.er lugar")}
+    </div>
+    <div class="bk-side">
+      ${bracketCol(R.SF, "Semifinal")}
+      ${bracketCol(R.QF, "Cuartos")}
+      ${bracketCol(R.R16, "Octavos")}
+      ${bracketCol(R.R32, "Dieciseisavos")}
+    </div>
+  </div>`;
+}
 function renderBracket() {
-  const order = ["R32","R16","QF","SF","3RD","FINAL"];
-  return order.map((st) => {
-    const ms = visibleMatches(state.matches.filter((m) => m.stage === st)).sort((a,b)=>a.id-b.id);
-    if (state.todayOnly && ms.length === 0) return "";
-    return `
-    <section class="round">
-      <h3>${STAGE_LABEL[st]}</h3>
-      <div class="cards">${ms.map(matchCard).join("")}</div>
-    </section>`;
-  }).join("");
+  // con el filtro "Hoy" activo, una lista simple es más útil que el árbol disperso
+  if (state.todayOnly) {
+    const order = ["R32","R16","QF","SF","3RD","FINAL"];
+    return order.map((st) => {
+      const ms = visibleMatches(state.matches.filter((m) => m.stage === st)).sort((a,b)=>a.id-b.id);
+      if (ms.length === 0) return "";
+      return `<section class="round"><h3>${STAGE_LABEL[st]}</h3><div class="cards">${ms.map(matchCard).join("")}</div></section>`;
+    }).join("");
+  }
+  return renderBracketTree();
 }
 
 function renderCalendar() {
