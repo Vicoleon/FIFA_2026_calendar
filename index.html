@@ -14,6 +14,13 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+  <aside id="theme-dock" aria-label="Tema visual">
+    <div class="td-title">🎨 Tema</div>
+    <button class="td-opt" data-theme-id="neon"><span class="td-sw sw-neon"></span>Neón</button>
+    <button class="td-opt" data-theme-id="fiesta"><span class="td-sw sw-fiesta"></span>Fiesta</button>
+    <button class="td-opt" data-theme-id="editorial"><span class="td-sw sw-editorial"></span>Editorial</button>
+  </aside>
+
   <header class="topbar">
     <div class="brand">
       <span class="ball">⚽</span>
@@ -29,7 +36,6 @@
     </nav>
     <div class="tools">
       <span id="editor-badge" class="badge"></span>
-      <button id="btn-theme" class="btn btn-ghost" title="Cambiar tema visual">🎨 Tema</button>
       <button id="btn-today" class="btn btn-ghost" hidden title="Mostrar solo los partidos de hoy">📅 Hoy</button>
       <button id="btn-pred" class="btn btn-ghost" title="Mostrar/ocultar pronósticos">🔮 Pronósticos</button>
       <button id="btn-recalc" class="btn btn-ghost" hidden title="Recalcular y guardar pronósticos">♻️ Recalcular</button>

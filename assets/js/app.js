@@ -42,15 +42,10 @@ const THEMES = [
 ];
 const currentTheme = () => document.documentElement.dataset.theme || "neon";
 function applyTheme(id) {
+  if (!THEMES.some((t) => t.id === id)) id = "neon";
   document.documentElement.dataset.theme = id;
   try { localStorage.setItem("wc-theme", id); } catch (_) {}
-  const t = THEMES.find((x) => x.id === id) || THEMES[0];
-  const btn = document.getElementById("btn-theme");
-  if (btn) btn.textContent = `🎨 ${t.name}`;
-}
-function cycleTheme() {
-  const i = THEMES.findIndex((x) => x.id === currentTheme());
-  applyTheme(THEMES[(i + 1) % THEMES.length].id);
+  document.querySelectorAll(".td-opt").forEach((o) => o.classList.toggle("active", o.dataset.themeId === id));
 }
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -460,8 +455,8 @@ function wireEvents() {
   $$(".tab").forEach((t) => t.onclick = () => { state.view = t.dataset.view; render(); });
   $("#btn-login").onclick = loginFlow;
   $("#btn-recalc").onclick = recalcPredictions;
-  $("#btn-theme").onclick = cycleTheme;
-  applyTheme(currentTheme()); // sincroniza la etiqueta del botón con el tema guardado
+  $$(".td-opt").forEach((o) => (o.onclick = () => applyTheme(o.dataset.themeId)));
+  applyTheme(currentTheme()); // marca el tema guardado como activo en el panel
   $("#btn-today").onclick = () => { state.todayOnly = !state.todayOnly; render(); };
   $("#btn-pred").onclick = () => {
     state.showPred = !state.showPred;
