@@ -108,9 +108,9 @@ tarjetas) **y los goleadores** se obtienen de la **API pública no oficial de ES
 (gratis, sin llave), vía la Edge Function `sync-espn`, que las escribe en
 `match_stats` y `goals`. Luego el modelo recalcula solo (análisis multivariable).
 
-- **Automatización:** un cron en Supabase (`pg_cron`) ejecuta `sync-espn` **a diario
-  a las 09:00 UTC** (captura los partidos del día anterior con stats finales).
-  Cambia la frecuencia en SQL: `cron.schedule('sync-espn-daily', '*/30 * * * *', …)`.
+- **Automatización:** un cron en Supabase (`pg_cron`) ejecuta `sync-espn` **cada hora**
+  (`sync-espn-hourly`, `0 * * * *`), así los stats de cada partido entran en ≤1 h de terminar.
+  Cambia la frecuencia en SQL, p. ej. cada 4 h: `cron.schedule('sync-espn-hourly', '0 */4 * * *', …)`.
 - **Validar manualmente** (sin escribir nada), usando el `eventId` de un partido en ESPN:
   `…/functions/v1/sync-espn?league=fifa.world&event=<ID>`
 - ⚠️ Es una API **no oficial** (sin soporte ni SLA): puede cambiar. Para uso personal
