@@ -14,6 +14,8 @@ window.APP_CONFIG = {
     K_FACTOR: 40,           // peso de actualización Elo (Mundial = alto)
     TOURNAMENT_WEIGHT: 2,   // ⬅️ el desempeño DENTRO del Mundial pesa x2 en el rating
                             //    (sube a 3-4 si quieres que la forma del torneo domine aún más)
+    PERF_BLEND: 0.35,       // análisis multivariable: cuánto pesa el "merecimiento" (xG/tiros/posesión)
+                            //    vs el resultado puro al actualizar el rating (0 = solo marcador, 1 = solo stats)
     BASE_GOALS: 1.35,       // goles esperados base por equipo
     MAX_GOALS: 8            // tope de la matriz de Poisson
   },

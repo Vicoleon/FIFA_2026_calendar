@@ -67,7 +67,7 @@ function computeBracketAndPredictions() {
   const finished = state.matches
     .filter((m) => m.status === "finished")
     .sort((a, b) => new Date(a.kickoff) - new Date(b.kickoff));
-  state.ratings = window.Predictor.currentRatings(state.teams, finished);
+  state.ratings = window.Predictor.currentRatings(state.teams, finished, state.stats);
 
   // resolver equipos de cada partido (grupo = directo, eliminatoria = placeholder)
   const ctx = { teams: state.teams, matches: state.matches, groups: GROUPS };
@@ -242,7 +242,24 @@ function statsPanelHtml(m) {
   const goalsHtml = gs.length
     ? `<div class="goals">⚽ ${gs.map((g) => `${esc(state.teamMap[g.team_id]?.flag || "")} ${esc(g.player || "Gol")} ${g.minute ?? "?"}'`).join(" · ")}</div>`
     : "";
-  return `
+
+  // análisis multivariable (xG aprox. + índice de dominio + veredicto)
+  let analysisHtml = "";
+  if (cols.length === 2 && window.Analytics) {
+    const a = window.Analytics.analyze(s[cols[0]], s[cols[1]], m.home_score, m.away_score);
+    if (a) {
+      const domH = Math.round(a.dom * 100), domA = 100 - domH;
+      analysisHtml = `
+        <div class="analysis">
+          <div class="ana-head">📈 Análisis del partido</div>
+          <div class="ana-row"><b>${a.xgH.toFixed(2)}</b><span>xG aprox.</span><b>${a.xgA.toFixed(2)}</b></div>
+          <div class="dom-bar"><span class="dom-h" style="width:${domH}%">${domH}%</span><span class="dom-a" style="width:${domA}%">${domA}%</span></div>
+          <div class="ana-verdict">${esc(a.verdict)} · dominio del juego</div>
+        </div>`;
+    }
+  }
+
+  return analysisHtml + `
     <table class="stats-table">
       <thead><tr><th>${esc(state.teamMap[cols[0]]?.name_es || "Local")}</th><th></th><th>${esc(state.teamMap[cols[1]]?.name_es || "Visita")}</th></tr></thead>
       <tbody>${rows}</tbody>

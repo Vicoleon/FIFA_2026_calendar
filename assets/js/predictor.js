@@ -64,12 +64,20 @@
   }
 
   // Actualiza Elo de ambos equipos tras un resultado real (Elo de fútbol con factor de goles)
-  function updateElo(ratings, homeId, awayId, hs, as, homeAdv) {
+  function updateElo(ratings, homeId, awayId, hs, as, homeAdv, hStats, aStats) {
     const eh = ratings[homeId];
     const ea = ratings[awayId];
     const we = expectedScore(eh + homeAdv, ea); // resultado esperado del local
     let w;                                       // resultado real (1/0.5/0)
     if (hs > as) w = 1; else if (hs === as) w = 0.5; else w = 0;
+
+    // Análisis multivariable: mezcla el resultado con el "merecimiento" (xG/tiros/posesión…)
+    // para que el rating refleje el rendimiento real, no solo el marcador o la suerte.
+    const blend = CFG.PERF_BLEND || 0;
+    if (blend > 0 && window.Analytics && hStats && aStats) {
+      const a = window.Analytics.analyze(hStats, aStats, hs, as);
+      if (a) w = (1 - blend) * w + blend * a.perf;
+    }
 
     // multiplicador por diferencia de goles (FIFA / World Football Elo)
     const gd = Math.abs(hs - as);
@@ -88,12 +96,14 @@
 
   // Dado el set de equipos (con elo semilla) y los partidos terminados (en orden),
   // devuelve los ratings ACTUALES sin tocar la semilla en la BD.
-  function currentRatings(teams, finishedMatches) {
+  function currentRatings(teams, finishedMatches, statsByMatch) {
     const ratings = {};
     teams.forEach((t) => (ratings[t.id] = Number(t.elo)));
     finishedMatches.forEach((m) => {
       if (m.home_team && m.away_team && m.home_score != null && m.away_score != null) {
-        updateElo(ratings, m.home_team, m.away_team, m.home_score, m.away_score, advantage(m.home_team));
+        const st = statsByMatch && statsByMatch[m.id];
+        updateElo(ratings, m.home_team, m.away_team, m.home_score, m.away_score, advantage(m.home_team),
+                  st && st[m.home_team], st && st[m.away_team]);
       }
     });
     return ratings;
