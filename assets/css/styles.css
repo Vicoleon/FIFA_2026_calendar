@@ -145,6 +145,21 @@ body {
 .kb-pbar .ph { background: var(--h); } .kb-pbar .pd { background: var(--d); } .kb-pbar .pa { background: var(--a); }
 .kb-proj .kb-team { font-style: italic; opacity: .82; }
 .kb-proj .kb-team::after { content: " ~"; opacity: .6; }
+/* grupos clicables en el cuadro */
+.kb-group { cursor: pointer; transition: border-color .15s, transform .1s; }
+.kb-group:hover { border-color: var(--acc); transform: translateY(-1px); }
+.group { scroll-margin-top: 84px; }
+/* panel de probabilidad de título */
+.odds { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin: 0 auto 16px; max-width: 580px; }
+.odds-h { font-size: 12px; font-weight: 700; color: var(--acc); text-align: center; margin-bottom: 10px; }
+.odds-list { display: flex; flex-direction: column; gap: 7px; }
+.odds-row { display: grid; grid-template-columns: 132px 1fr 52px 64px; align-items: center; gap: 8px; font-size: 12px; }
+.odds-t { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.odds-bar { height: 9px; background: var(--line); border-radius: 5px; overflow: hidden; }
+.odds-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--acc), var(--acc2)); }
+.odds-v { font-weight: 800; color: var(--acc); text-align: right; }
+.odds-sub { color: var(--mut); font-size: 11px; text-align: right; }
+@media (max-width: 520px) { .odds-row { grid-template-columns: 92px 1fr 44px; } .odds-sub { display: none; } }
 
 /* match card */
 .card {

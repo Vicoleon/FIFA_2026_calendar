@@ -107,6 +107,7 @@ function computeBracketAndPredictions() {
   // Proyección opcional: rellena la llave con los favoritos por rating (Elo)
   // para poder ver el cuadro pronosticado antes de que haya clasificados reales.
   state.matches.forEach((m) => { m._homeProj = false; m._awayProj = false; });
+  state.titleOdds = null;
   if (state.projection) {
     const pj = computeProjection();
     state.matches.forEach((m) => {
@@ -117,7 +118,62 @@ function computeBracketAndPredictions() {
         m._pred = window.Predictor.predict(state.ratings[m._home], state.ratings[m._away], m._home);
       }
     });
+    state.titleOdds = simulateTitleOdds(2500);
   }
+}
+
+// Monte Carlo: simula el torneo N veces para estimar % de llegar a la final y de ser campeón.
+function simulateTitleOdds(N) {
+  const r = state.ratings;
+  const adv = window.Predictor.advantage, exp = window.Predictor.expectedScore;
+  const champ = {}, final = {};
+  state.teams.forEach((t) => { champ[t.id] = 0; final[t.id] = 0; });
+  const ko = state.matches.filter((m) => m.stage !== "group").sort((a, b) => a.id - b.id)
+    .map((m) => ({ id: m.id, h: m.home_placeholder, a: m.away_placeholder }));
+  const byGroup = {};
+  GROUPS.forEach((g) => (byGroup[g] = state.teams.filter((t) => t.group_code === g).map((t) => t.id)));
+
+  for (let s = 0; s < N; s++) {
+    const rank = {}, thirdsArr = [];
+    GROUPS.forEach((g) => {
+      const tm = byGroup[g].map((id) => ({ id, pts: 0, gd: 0, rnd: Math.random() }));
+      const P = [[0,1],[2,3],[0,2],[1,3],[0,3],[1,2]];
+      P.forEach(([i, j]) => {
+        const A = tm[i], B = tm[j], pa = exp(r[A.id], r[B.id]);
+        const pd = Math.max(0.07, 0.30 - Math.abs(pa - 0.5) * 0.5);
+        const pAw = (1 - pd) * pa, pBw = (1 - pd) * (1 - pa), x = Math.random();
+        if (x < pAw) { A.pts += 3; A.gd++; B.gd--; }
+        else if (x < pAw + pBw) { B.pts += 3; B.gd++; A.gd--; }
+        else { A.pts++; B.pts++; }
+      });
+      tm.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
+      rank[g] = tm.map((t) => t.id);
+      thirdsArr.push({ g, ...tm[2] });
+    });
+    thirdsArr.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
+    const top8 = thirdsArr.slice(0, 8), used = new Set();
+    const thirdFor = (gs) => {
+      for (const t of top8) if (gs.includes(t.g) && !used.has(t.g)) { used.add(t.g); return t.id; }
+      const f = top8.find((t) => !used.has(t.g)); if (f) { used.add(f.g); return f.id; } return null;
+    };
+    const winOf = {};
+    const res = (ph) => {
+      let m;
+      if (m = ph.match(/^([12])([A-L])$/)) return rank[m[2]][(+m[1]) - 1];
+      if (m = ph.match(/^3([A-L]+)$/)) return thirdFor(m[1]);
+      if (m = ph.match(/^W(\d+)$/)) return winOf[+m[1]];
+      return null; // L## (bronce) no cuenta para el título
+    };
+    ko.forEach((k) => {
+      if (k.id === 103) return; // tercer lugar
+      const h = res(k.h), a = res(k.a);
+      if (k.id === 104) { if (h) final[h]++; if (a) final[a]++; }
+      const w = (h && a) ? (Math.random() < exp(r[h] + adv(h), r[a]) ? h : a) : (h || a);
+      if (k.id === 104) { if (w) champ[w]++; } else if (w) winOf[k.id] = w;
+    });
+  }
+  return state.teams.map((t) => ({ id: t.id, champ: champ[t.id] / N, final: final[t.id] / N }))
+    .sort((a, b) => b.champ - a.champ);
 }
 
 // Proyecta clasificados y ganadores de cada cruce a partir del rating actual (Elo).
@@ -226,7 +282,7 @@ function renderGroups() {
     if (state.todayOnly && gm.length === 0) return ""; // sin partidos hoy → oculta el grupo
     const table = window.Standings.groupTable(state.teams, state.matches, g);
     return `
-    <section class="group">
+    <section class="group" id="group-${g}">
       <h3>Grupo ${g}</h3>
       <table class="gtable">
         <thead><tr><th>#</th><th>Equipo</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th></tr></thead>
@@ -279,14 +335,31 @@ const kbCol = (ids, cls) => `<div class="kb-col ${cls}">${ids.map(kbMatch).join(
 
 function groupChip(g) {
   const ts = state.teams.filter((t) => t.group_code === g).sort((a, b) => (a.seed_pos || 0) - (b.seed_pos || 0));
-  return `<div class="kb-group"><div class="kb-gname">Grupo ${g}</div>
+  return `<div class="kb-group" data-group="${g}" title="Ver Grupo ${g} →"><div class="kb-gname">Grupo ${g}</div>
     <div class="kb-gflags">${ts.map((t) => `<span title="${esc(t.name_es)}">${t.flag}</span>`).join("")}</div></div>`;
+}
+
+// panel de probabilidades de título (simulación)
+function renderOddsPanel() {
+  const top = state.titleOdds.slice(0, 10);
+  return `<div class="odds">
+    <div class="odds-h">🏆 Probabilidad de título · simulación de 2 500 torneos</div>
+    <div class="odds-list">${top.map((o) => {
+      const t = state.teamMap[o.id];
+      return `<div class="odds-row">
+        <span class="odds-t">${t.flag} ${esc(t.name_es)}</span>
+        <span class="odds-bar"><i style="width:${Math.max(2, Math.round(o.champ * 100))}%"></i></span>
+        <span class="odds-v">${(o.champ * 100).toFixed(1)}%</span>
+        <span class="odds-sub">${(o.final * 100).toFixed(0)}% final</span>
+      </div>`;
+    }).join("")}</div></div>`;
 }
 
 function renderBracketTree() {
   const L = BRACKET.left, R = BRACKET.right;
   return `<div class="kb">
     ${state.projection ? `<div class="kb-note">🔮 Proyección por rating (Elo) · no oficial — se ajusta con cada resultado real</div>` : ""}
+    ${state.projection && state.titleOdds ? renderOddsPanel() : ""}
     <div class="kb-groups">${["A","B","C","D","E","F"].map(groupChip).join("")}</div>
     <div class="kb-body">
       <div class="kb-side kb-left">
@@ -528,6 +601,13 @@ function wireEvents() {
 
   // delegación de clics en tarjetas
   $("#content").addEventListener("click", (e) => {
+    // clic en un grupo del cuadro → ir a ese grupo en la pestaña Grupos
+    const kg = e.target.closest(".kb-group");
+    if (kg && kg.dataset.group) {
+      state.view = "grupos"; render();
+      document.getElementById("group-" + kg.dataset.group)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     // clic en un slot del cuadro → editar (si eres editor)
     const km = e.target.closest(".kb-match");
     if (km) {
