@@ -189,30 +189,51 @@ const BRACKET = {
   right: { R32: [76,78,79,80,86,88,85,87], R16: [91,92,95,96], QF: [99,100], SF: [102] },
 };
 const mById = (id) => state.matches.find((m) => m.id === id);
-function bracketCol(ids, label) {
-  return `<div class="bk-col"><div class="bk-label">${label}</div>
-    <div class="bk-col-body">${ids.map((id) => { const m = mById(id); return m ? matchCard(m) : ""; }).join("")}</div></div>`;
+
+// un "slot" del cuadro: equipo resuelto (bandera + código) o la etiqueta (1E, 3ABCDF…)
+function kbSlot(teamId, ph, score) {
+  if (teamId) {
+    const t = state.teamMap[teamId];
+    return `<div class="kb-slot"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}</span>` : ""}</div>`;
+  }
+  return `<div class="kb-slot kb-ph"><span class="kb-team">${esc(ph || "—")}</span></div>`;
 }
+function kbMatch(id) {
+  const m = mById(id); if (!m) return "";
+  const sc = m.status === "finished" || m.status === "live";
+  return `<div class="kb-match ${m.status === "live" ? "kb-live" : ""}" data-mid="${id}" title="M${id} · ${esc(m.venue || "")} · ${fmtDate(m.kickoff)}">
+    ${kbSlot(m._home, m.home_placeholder, sc ? m.home_score : null)}
+    ${kbSlot(m._away, m.away_placeholder, sc ? m.away_score : null)}
+  </div>`;
+}
+const kbCol = (ids, cls) => `<div class="kb-col ${cls}">${ids.map(kbMatch).join("")}</div>`;
+
+function groupChip(g) {
+  const ts = state.teams.filter((t) => t.group_code === g).sort((a, b) => (a.seed_pos || 0) - (b.seed_pos || 0));
+  return `<div class="kb-group"><div class="kb-gname">Grupo ${g}</div>
+    <div class="kb-gflags">${ts.map((t) => `<span title="${esc(t.name_es)}">${t.flag}</span>`).join("")}</div></div>`;
+}
+
 function renderBracketTree() {
   const L = BRACKET.left, R = BRACKET.right;
-  return `<div class="bracket">
-    <div class="bk-side">
-      ${bracketCol(L.R32, "Dieciseisavos")}
-      ${bracketCol(L.R16, "Octavos")}
-      ${bracketCol(L.QF, "Cuartos")}
-      ${bracketCol(L.SF, "Semifinal")}
+  return `<div class="kb">
+    <div class="kb-groups">${["A","B","C","D","E","F"].map(groupChip).join("")}</div>
+    <div class="kb-body">
+      <div class="kb-side kb-left">
+        ${kbCol(L.R32, "r32")}${kbCol(L.R16, "r16")}${kbCol(L.QF, "qf")}${kbCol(L.SF, "sf")}
+      </div>
+      <div class="kb-center">
+        <div class="kb-title">Campeón del Mundo</div>
+        ${kbCol([104], "fin")}
+        <div class="kb-trophy">🏆</div>
+        <div class="kb-blabel">Tercer lugar</div>
+        ${kbCol([103], "fin")}
+      </div>
+      <div class="kb-side kb-right">
+        ${kbCol(R.SF, "sf")}${kbCol(R.QF, "qf")}${kbCol(R.R16, "r16")}${kbCol(R.R32, "r32")}
+      </div>
     </div>
-    <div class="bk-center">
-      <div class="bk-trophy">🏆</div>
-      ${bracketCol([104], "Final")}
-      ${bracketCol([103], "3.er lugar")}
-    </div>
-    <div class="bk-side">
-      ${bracketCol(R.SF, "Semifinal")}
-      ${bracketCol(R.QF, "Cuartos")}
-      ${bracketCol(R.R16, "Octavos")}
-      ${bracketCol(R.R32, "Dieciseisavos")}
-    </div>
+    <div class="kb-groups">${["G","H","I","J","K","L"].map(groupChip).join("")}</div>
   </div>`;
 }
 function renderBracket() {
@@ -429,6 +450,13 @@ function wireEvents() {
 
   // delegación de clics en tarjetas
   $("#content").addEventListener("click", (e) => {
+    // clic en un slot del cuadro → editar (si eres editor)
+    const km = e.target.closest(".kb-match");
+    if (km) {
+      const m = state.matches.find((x) => x.id === +km.dataset.mid);
+      if (m && state.session) editModal(m);
+      return;
+    }
     const btn = e.target.closest("button[data-act]");
     if (!btn) return;
     const card = btn.closest(".card");
