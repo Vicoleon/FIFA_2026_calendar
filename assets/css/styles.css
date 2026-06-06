@@ -45,6 +45,7 @@ body {
 .btn:hover { filter: brightness(1.1); }
 .btn-ghost { background: var(--card2); color: var(--txt); border: 1px solid var(--line); }
 .btn-ghost.off { opacity: .5; }
+.btn-ghost.active { background: var(--acc); color: #04121c; border-color: var(--acc); }
 .btn-primary { background: var(--acc); color: #04121c; }
 
 /* layout */

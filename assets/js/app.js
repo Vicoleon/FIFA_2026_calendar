@@ -15,10 +15,24 @@ const STAT_FIELDS = [
   ["yellow_cards","Amarillas"], ["red_cards","Rojas"]
 ];
 
+const TOURNAMENT_START = new Date("2026-06-11T00:00:00"); // el botón "Hoy" aparece a partir de aquí
+
 const state = {
   teams: [], teamMap: {}, matches: [], stats: {}, goals: {},
-  ratings: {}, predictions: {}, session: null, view: "grupos", showPred: true
+  ratings: {}, predictions: {}, session: null, view: "grupos",
+  showPred: true, todayOnly: false
 };
+
+// ¿ya empezó el Mundial? (según el reloj del dispositivo)
+const tournamentStarted = () => new Date() >= TOURNAMENT_START;
+// ¿el partido es de hoy? (fecha local del usuario)
+function isToday(m) {
+  if (!m.kickoff) return false;
+  const d = new Date(m.kickoff), n = new Date();
+  return d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth() && d.getDate() === n.getDate();
+}
+// aplica el filtro "Hoy" si está activo
+const visibleMatches = (arr) => (state.todayOnly ? arr.filter(isToday) : arr);
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -145,8 +159,9 @@ function matchCard(m) {
 // ---------- vistas ----------
 function renderGroups() {
   return GROUPS.map((g) => {
+    const gm = visibleMatches(state.matches.filter((m) => m.stage === "group" && m.group_code === g));
+    if (state.todayOnly && gm.length === 0) return ""; // sin partidos hoy → oculta el grupo
     const table = window.Standings.groupTable(state.teams, state.matches, g);
-    const gm = state.matches.filter((m) => m.stage === "group" && m.group_code === g);
     return `
     <section class="group">
       <h3>Grupo ${g}</h3>
@@ -170,7 +185,8 @@ function renderGroups() {
 function renderBracket() {
   const order = ["R32","R16","QF","SF","3RD","FINAL"];
   return order.map((st) => {
-    const ms = state.matches.filter((m) => m.stage === st).sort((a,b)=>a.id-b.id);
+    const ms = visibleMatches(state.matches.filter((m) => m.stage === st)).sort((a,b)=>a.id-b.id);
+    if (state.todayOnly && ms.length === 0) return "";
     return `
     <section class="round">
       <h3>${STAGE_LABEL[st]}</h3>
@@ -181,7 +197,7 @@ function renderBracket() {
 
 function renderCalendar() {
   const byDay = {};
-  state.matches.forEach((m) => {
+  visibleMatches(state.matches).forEach((m) => {
     const d = m.kickoff ? new Date(m.kickoff).toLocaleDateString("es-MX", { weekday:"long", day:"2-digit", month:"long" }) : "Por definir";
     (byDay[d] ||= []).push(m);
   });
@@ -200,12 +216,17 @@ function render() {
   $("#editor-badge").textContent = state.session ? `🔓 Editor: ${state.session.user.email}` : "";
   $("#btn-login").textContent = state.session ? "Cerrar sesión" : "🔒 Modo edición";
   $("#btn-recalc").hidden = !state.session;
+  const started = tournamentStarted();
+  $("#btn-today").hidden = !started;          // oculto hasta el 11 de junio
+  if (!started) state.todayOnly = false;
+  $("#btn-today").classList.toggle("active", state.todayOnly);
   $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === state.view));
 
   let html = "";
   if (state.view === "grupos") html = renderGroups();
   else if (state.view === "eliminatorias") html = renderBracket();
   else html = renderCalendar();
+  if (state.todayOnly && !html.trim()) html = `<p class="loading">No hay partidos hoy en esta vista. 📅</p>`;
   $("#content").innerHTML = html;
 }
 
@@ -349,6 +370,7 @@ function wireEvents() {
   $$(".tab").forEach((t) => t.onclick = () => { state.view = t.dataset.view; render(); });
   $("#btn-login").onclick = loginFlow;
   $("#btn-recalc").onclick = recalcPredictions;
+  $("#btn-today").onclick = () => { state.todayOnly = !state.todayOnly; render(); };
   $("#btn-pred").onclick = () => {
     state.showPred = !state.showPred;
     $("#btn-pred").classList.toggle("off", !state.showPred);
