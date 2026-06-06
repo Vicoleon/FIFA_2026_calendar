@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mockup 4 · Broadcast TV</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Saira+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1220;--panel:#10192c;--line:#1f2c47;--ac:#ffd23f;--live:#ff3b3b;--grn:#1fd17a;--txt:#f2f6ff;--mut:#8aa0c4;}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Oswald',system-ui;background:var(--bg);color:var(--txt);min-height:100vh}
+.bar{height:6px;background:repeating-linear-gradient(90deg,var(--ac) 0 40px,#0b1220 40px 46px,var(--live) 46px 86px,#0b1220 86px 92px)}
+.wrap{max-width:1120px;margin:0 auto;padding:22px}
+.top{display:flex;align-items:center;gap:14px}
+.bug{background:var(--live);color:#fff;font-weight:800;font-family:'Saira Condensed';letter-spacing:1px;padding:6px 12px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.logo{font-family:'Saira Condensed';font-weight:800;font-size:30px;letter-spacing:1px}
+.logo span{color:var(--ac)}
+.tabs{margin-left:auto;display:flex;gap:0}
+.tab{font-family:'Saira Condensed';font-weight:800;letter-spacing:1px;padding:9px 18px;background:var(--panel);color:var(--mut);text-transform:uppercase;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%)}
+.tab.on{background:var(--ac);color:#101}
+.sec{font-family:'Saira Condensed';font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--mut);margin:26px 0 12px;border-left:5px solid var(--ac);padding-left:10px}
+/* scoreboard bar */
+.score{display:flex;align-items:stretch;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:12px}
+.side{flex:1;display:flex;align-items:center;gap:12px;padding:14px 16px}
+.side.r{flex-direction:row-reverse;text-align:right}
+.fl{font-size:30px}
+.nm{font-family:'Saira Condensed';font-weight:800;font-size:22px;letter-spacing:1px}
+.box{display:flex;align-items:center;justify-content:center;flex-direction:column;min-width:120px;background:#0a1326;border-left:1px solid var(--line);border-right:1px solid var(--line);padding:10px}
+.big{font-family:'Saira Condensed';font-weight:800;font-size:34px;line-height:1}
+.clk{color:var(--live);font-weight:700;font-size:13px;letter-spacing:1px;animation:b 1.1s infinite}@keyframes b{50%{opacity:.4}}
+.up{color:var(--ac);font-size:13px;letter-spacing:1px}
+.pred{display:flex;height:26px;border-radius:5px;overflow:hidden;font-family:'Saira Condensed';font-weight:800;font-size:12px}
+.pred i{display:flex;align-items:center;justify-content:center;font-style:normal}
+.h{background:var(--grn);color:#012}.d{background:#33415f}.a{background:var(--ac);color:#101}
+.lower{margin-top:6px;color:var(--mut);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.foot{margin-top:26px;color:var(--mut);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-align:center}
+</style></head><body><div class="bar"></div><div class="wrap">
+<div class="top">
+  <span class="bug">EN VIVO</span>
+  <div class="logo">WC<span>26</span> · CENTRO DE MANDO</div>
+  <div class="tabs"><span class="tab on">Partidos</span><span class="tab">Llave</span><span class="tab">Datos</span></div>
+</div>
+
+<div class="sec">● Transmisión en vivo</div>
+<div class="score">
+  <div class="side"><span class="fl">🇧🇷</span><span class="nm">BRASIL</span></div>
+  <div class="box"><span class="big">1 – 0</span><span class="clk">● 67'</span></div>
+  <div class="side r"><span class="fl">🇲🇦</span><span class="nm">MARRUECOS</span></div>
+</div>
+<div class="score">
+  <div class="side"><span class="fl">🇺🇸</span><span class="nm">USA</span></div>
+  <div class="box"><span class="big">0 – 0</span><span class="clk">● 23'</span></div>
+  <div class="side r"><span class="fl">🇵🇾</span><span class="nm">PARAGUAY</span></div>
+</div>
+
+<div class="sec">▮ Próximo · análisis predictivo</div>
+<div class="score">
+  <div class="side"><span class="fl">🇦🇷</span><span class="nm">ARGENTINA</span></div>
+  <div class="box"><span class="big">2 – 0</span><span class="up">16 JUN 20:00</span></div>
+  <div class="side r"><span class="fl">🇩🇿</span><span class="nm">ARGELIA</span></div>
+</div>
+<div class="pred"><i class="h" style="width:74%">ARG 74%</i><i class="d" style="width:18%">X 18%</i><i class="a" style="width:8%">ALG 8%</i></div>
+<div class="lower">xG proyectado 2.1 – 0.6 · dominio esperado 72% · modelo Elo+Poisson</div>
+<div class="foot">— GRÁFICOS DE TRANSMISIÓN · ACTUALIZA AUTOMÁTICO —</div>
+</div></body></html>
