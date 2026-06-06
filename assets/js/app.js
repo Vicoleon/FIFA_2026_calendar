@@ -20,7 +20,7 @@ const TOURNAMENT_START = new Date("2026-06-11T00:00:00"); // el botón "Hoy" apa
 const state = {
   teams: [], teamMap: {}, matches: [], stats: {}, goals: {},
   ratings: {}, predictions: {}, session: null, view: "grupos",
-  showPred: true, todayOnly: false
+  showPred: true, todayOnly: false, projection: false
 };
 
 // ¿ya empezó el Mundial? (según el reloj del dispositivo)
@@ -103,6 +103,55 @@ function computeBracketAndPredictions() {
         m._pred = null;
       }
     });
+
+  // Proyección opcional: rellena la llave con los favoritos por rating (Elo)
+  // para poder ver el cuadro pronosticado antes de que haya clasificados reales.
+  state.matches.forEach((m) => { m._homeProj = false; m._awayProj = false; });
+  if (state.projection) {
+    const pj = computeProjection();
+    state.matches.forEach((m) => {
+      if (m.stage === "group") return;
+      if (!m._home && pj.homeOf[m.id]) { m._home = pj.homeOf[m.id]; m._homeProj = true; }
+      if (!m._away && pj.awayOf[m.id]) { m._away = pj.awayOf[m.id]; m._awayProj = true; }
+      if (m.status !== "finished" && m._home && m._away) {
+        m._pred = window.Predictor.predict(state.ratings[m._home], state.ratings[m._away], m._home);
+      }
+    });
+  }
+}
+
+// Proyecta clasificados y ganadores de cada cruce a partir del rating actual (Elo).
+function computeProjection() {
+  const r = state.ratings;
+  const adv = window.Predictor.advantage, exp = window.Predictor.expectedScore;
+  const rank = {}; // ranking de cada grupo por rating
+  GROUPS.forEach((g) => {
+    rank[g] = state.teams.filter((t) => t.group_code === g)
+      .sort((a, b) => r[b.id] - r[a.id]).map((t) => t.id);
+  });
+  // 8 mejores terceros por rating
+  const thirds = GROUPS.map((g) => ({ g, id: rank[g][2] })).sort((x, y) => r[y.id] - r[x.id]).slice(0, 8);
+  const usedThird = new Set();
+  const thirdFor = (gs) => {
+    for (const t of thirds) if (gs.includes(t.g) && !usedThird.has(t.g)) { usedThird.add(t.g); return t.id; }
+    return null;
+  };
+  const homeOf = {}, awayOf = {}, winOf = {}, loseOf = {};
+  const resolve = (ph) => {
+    if (!ph) return null;
+    let m = ph.match(/^([WL])(\d+)$/); if (m) return m[1] === "W" ? winOf[+m[2]] : loseOf[+m[2]];
+    m = ph.match(/^([12])([A-L])$/); if (m) return rank[m[2]][(+m[1]) - 1];
+    m = ph.match(/^3([A-L]+)$/); if (m) return thirdFor(m[1]);
+    return null;
+  };
+  state.matches.filter((m) => m.stage !== "group").sort((a, b) => a.id - b.id).forEach((m) => {
+    const h = m.home_team || resolve(m.home_placeholder);
+    const a = m.away_team || resolve(m.away_placeholder);
+    homeOf[m.id] = h; awayOf[m.id] = a;
+    const winner = (h && a) ? (exp(r[h] + adv(h), r[a]) >= 0.5 ? h : a) : (h || a);
+    if (winner) { winOf[m.id] = winner; loseOf[m.id] = (h && a) ? (winner === h ? a : h) : null; }
+  });
+  return { homeOf, awayOf };
 }
 
 // ---------- helpers de presentación ----------
@@ -205,19 +254,25 @@ const BRACKET = {
 const mById = (id) => state.matches.find((m) => m.id === id);
 
 // un "slot" del cuadro: equipo resuelto (bandera + código) o la etiqueta (1E, 3ABCDF…)
-function kbSlot(teamId, ph, score) {
+function kbSlot(teamId, ph, score, proj) {
   if (teamId) {
     const t = state.teamMap[teamId];
-    return `<div class="kb-slot"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}</span>` : ""}</div>`;
+    return `<div class="kb-slot ${proj ? "kb-proj" : ""}"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}</span>` : ""}</div>`;
   }
   return `<div class="kb-slot kb-ph"><span class="kb-team">${esc(ph || "—")}</span></div>`;
 }
 function kbMatch(id) {
   const m = mById(id); if (!m) return "";
   const sc = m.status === "finished" || m.status === "live";
+  const p = m._pred;
+  const pred = (state.showPred && p)
+    ? `<div class="kb-pred"><span class="kb-pscore">🔮 ${p.predHome}-${p.predAway}</span>
+        <span class="kb-pbar"><i class="ph" style="width:${Math.round(p.pHomeWin*100)}%"></i><i class="pd" style="width:${Math.round(p.pDraw*100)}%"></i><i class="pa" style="width:${Math.round(p.pAwayWin*100)}%"></i></span></div>`
+    : "";
   return `<div class="kb-match ${m.status === "live" ? "kb-live" : ""}" data-mid="${id}" title="M${id} · ${esc(m.venue || "")} · ${fmtDate(m.kickoff)}">
-    ${kbSlot(m._home, m.home_placeholder, sc ? m.home_score : null)}
-    ${kbSlot(m._away, m.away_placeholder, sc ? m.away_score : null)}
+    ${kbSlot(m._home, m.home_placeholder, sc ? m.home_score : null, m._homeProj)}
+    ${kbSlot(m._away, m.away_placeholder, sc ? m.away_score : null, m._awayProj)}
+    ${pred}
   </div>`;
 }
 const kbCol = (ids, cls) => `<div class="kb-col ${cls}">${ids.map(kbMatch).join("")}</div>`;
@@ -231,6 +286,7 @@ function groupChip(g) {
 function renderBracketTree() {
   const L = BRACKET.left, R = BRACKET.right;
   return `<div class="kb">
+    ${state.projection ? `<div class="kb-note">🔮 Proyección por rating (Elo) · no oficial — se ajusta con cada resultado real</div>` : ""}
     <div class="kb-groups">${["A","B","C","D","E","F"].map(groupChip).join("")}</div>
     <div class="kb-body">
       <div class="kb-side kb-left">
@@ -461,6 +517,12 @@ function wireEvents() {
   $("#btn-pred").onclick = () => {
     state.showPred = !state.showPred;
     $("#btn-pred").classList.toggle("off", !state.showPred);
+    render();
+  };
+  $("#btn-project").onclick = () => {
+    state.projection = !state.projection;
+    $("#btn-project").classList.toggle("active", state.projection);
+    computeBracketAndPredictions(); // recalcula resolviendo (o no) la proyección
     render();
   };
 

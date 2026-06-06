@@ -136,6 +136,15 @@ body {
 .kb-right .kb-col:not(.r32) .kb-match::before { content: ""; position: absolute; top: -50%; bottom: -50%; width: 2px; background: var(--line); }
 .kb-left .kb-col:not(.r32) .kb-match::before { right: 100%; margin-right: 13px; }
 .kb-right .kb-col:not(.r32) .kb-match::before { left: 100%; margin-left: 13px; }
+/* pronóstico dentro del slot del cuadro */
+.kb-note { text-align: center; font-size: 11px; color: var(--mut); font-style: italic; margin-bottom: 12px; }
+.kb-pred { display: flex; align-items: center; gap: 6px; padding: 4px 8px; border-top: 1px dashed var(--line); }
+.kb-pscore { font-size: 10px; color: var(--mut); font-weight: 700; white-space: nowrap; }
+.kb-pbar { flex: 1; display: flex; height: 7px; border-radius: 4px; overflow: hidden; }
+.kb-pbar i { display: block; height: 100%; }
+.kb-pbar .ph { background: var(--h); } .kb-pbar .pd { background: var(--d); } .kb-pbar .pa { background: var(--a); }
+.kb-proj .kb-team { font-style: italic; opacity: .82; }
+.kb-proj .kb-team::after { content: " ~"; opacity: .6; }
 
 /* match card */
 .card {
