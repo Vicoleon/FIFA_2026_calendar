@@ -9,11 +9,13 @@ window.APP_CONFIG = {
 
   // Parámetros del motor de pronóstico
   PREDICTOR: {
-    HOME_ADV: 35,      // ventaja Elo para el equipo "local" (sedes casi neutrales)
-    HOST_BONUS: 45,    // bonus extra si el local es anfitrión (MEX/USA/CAN)
-    K_FACTOR: 40,      // peso de actualización Elo (Mundial = alto)
-    BASE_GOALS: 1.35,  // goles esperados base por equipo
-    MAX_GOALS: 8       // tope de la matriz de Poisson
+    HOME_ADV: 35,           // ventaja Elo para el equipo "local" (sedes casi neutrales)
+    HOST_BONUS: 45,         // bonus extra si el local es anfitrión (MEX/USA/CAN)
+    K_FACTOR: 40,           // peso de actualización Elo (Mundial = alto)
+    TOURNAMENT_WEIGHT: 2,   // ⬅️ el desempeño DENTRO del Mundial pesa x2 en el rating
+                            //    (sube a 3-4 si quieres que la forma del torneo domine aún más)
+    BASE_GOALS: 1.35,       // goles esperados base por equipo
+    MAX_GOALS: 8            // tope de la matriz de Poisson
   },
 
   HOSTS: ["MEX", "USA", "CAN"]

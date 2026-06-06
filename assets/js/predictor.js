@@ -77,7 +77,11 @@
     if (gd === 2) g = 1.5;
     else if (gd >= 3) g = (11 + gd) / 8;
 
-    const delta = CFG.K_FACTOR * g * (w - we);
+    // El desempeño dentro del Mundial pesa x TOURNAMENT_WEIGHT: una selección que
+    // rinde por encima de su expectativa (efecto "Costa Rica 2014") sube su rating
+    // mucho más rápido, y eso domina el pronóstico de sus siguientes partidos.
+    const weight = CFG.TOURNAMENT_WEIGHT || 1;
+    const delta = CFG.K_FACTOR * weight * g * (w - we);
     ratings[homeId] = eh + delta;
     ratings[awayId] = ea - delta;
   }
