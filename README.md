@@ -32,9 +32,16 @@ No hay que configurar nada más: las credenciales públicas de Supabase ya está
 
 ## 🔐 Modo edición (cargar resultados)
 
-1. Clic en **🔒 Modo edición** → escribe tu correo → recibes un **código de 6 dígitos** por email → lo ingresas.
+1. Clic en **🔒 Modo edición** → escribe tu **correo y contraseña** (sin correos de verificación).
+   - Editor por defecto: `joseleonsalgado@gmail.com` · contraseña inicial: `Mundial2026!`
 2. Aparece **✏️ Editar** en cada tarjeta: marcador, estado (programado/en vivo/finalizado) y estadísticas por equipo.
 3. Botón **♻️ Recalcular** guarda una instantánea de los pronósticos en la base.
+
+> 🔑 **Cambiar la contraseña** (recomendado): Supabase → SQL Editor:
+> ```sql
+> update auth.users set encrypted_password = crypt('TU_NUEVA_CLAVE', gen_salt('bf'))
+> where email = 'joseleonsalgado@gmail.com';
+> ```
 
 La edición está protegida por **Row Level Security**: cualquiera puede *ver*, pero sólo los correos autorizados pueden *escribir*.
 

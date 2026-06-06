@@ -324,17 +324,15 @@ async function recalcPredictions() {
   await refresh();
 }
 
-// ---------- auth ----------
+// ---------- auth (correo + contraseña, sin correos de verificación) ----------
 async function loginFlow() {
   if (state.session) { await db.auth.signOut(); return; }
-  const email = prompt("Correo del editor (recibirás un código de 6 dígitos):");
+  const email = prompt("Correo del editor:", "joseleonsalgado@gmail.com");
   if (!email) return;
-  const { error } = await db.auth.signInWithOtp({ email: email.trim(), options: { shouldCreateUser: true } });
-  if (error) { alert("Error enviando código: " + error.message); return; }
-  const token = prompt(`Te enviamos un código a ${email}. Escríbelo aquí:`);
-  if (!token) return;
-  const { error: ve } = await db.auth.verifyOtp({ email: email.trim(), token: token.trim(), type: "email" });
-  if (ve) alert("Código inválido: " + ve.message);
+  const password = prompt("Contraseña:");
+  if (!password) return;
+  const { error } = await db.auth.signInWithPassword({ email: email.trim(), password });
+  if (error) alert("No se pudo iniciar sesión: " + error.message);
 }
 
 // ---------- ciclo ----------
