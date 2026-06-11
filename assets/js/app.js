@@ -658,11 +658,13 @@ function wireEvents() {
     .subscribe();
 }
 
-// ---------- datos en vivo (proxy football-data vía Edge Function) ----------
+// ---------- datos en vivo (marcador desde ESPN vía Edge Function) ----------
 async function syncLive() {
-  // Llama al proxy: si hay partidos en curso, actualiza la BD y Realtime
-  // refresca la UI automáticamente. Fuera de horario de partidos sale barato.
-  try { await db.functions.invoke("live-scores"); } catch (_) { /* sin red / sin token: ignora */ }
+  // Nudge inmediato a ESPN (modo "scores": solo marcador/minuto, rápido). Si hay
+  // partido en curso actualiza `matches` y Realtime refresca la UI en todos lados.
+  // Un cron en Supabase (sync-espn-scores) ya hace esto cada minuto aunque nadie
+  // tenga la página abierta; esto solo acelera el primer dato al abrir.
+  try { await db.functions.invoke("sync-espn", { body: { mode: "scores" } }); } catch (_) { /* sin red: ignora */ }
 }
 
 // Expuesto para la capa de quiniela (assets/js/quiniela.js).
