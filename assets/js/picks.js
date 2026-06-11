@@ -2,7 +2,7 @@
 //  Picks (pronósticos del usuario): widget en cada tarjeta,
 //  guardado/borrado, Joker, y la vista "Mi Quiniela".
 // ============================================================
-import { db } from "./lib/db.js";
+import { db, rpc } from "./lib/db.js";
 import { state, STAGE_LABEL } from "./lib/state.js";
 import { loadUserData } from "./lib/state.js";
 import { esc, fmtDate, hasKickedOff, toast, refreshApp } from "./lib/dom.js";
@@ -87,11 +87,13 @@ async function savePickFromEl(pickEl) {
 export async function savePick(matchId, home, away, joker) {
   const uid = state.session?.user?.id;
   if (!uid) { toast("Inicia sesión para jugar", "error"); return; }
-  const { error } = await db.from("picks").upsert(
-    { user_id: uid, match_id: matchId, home_score: home, away_score: away, is_joker: joker },
-    { onConflict: "user_id,match_id" }
-  );
-  if (error) { toast(error.message, "error"); return; }
+  try {
+    // Vía RPC security-definer: valida sesión + bloqueo por kickoff + regla del Joker.
+    await rpc("save_pick", { p_match_id: matchId, p_home: home, p_away: away, p_joker: joker });
+  } catch (e) {
+    toast(e.message, "error");
+    return;
+  }
   toast("Pronóstico guardado ✓", "success");
   await loadUserData();
   refreshApp();
