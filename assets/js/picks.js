@@ -120,10 +120,12 @@ export function renderMiQuiniela() {
     </section>`;
   }
 
-  const pickable = state.matches.filter((m) => m._home && m._away && m.status !== "finished");
-  const pending = pickable.filter((m) => !state.myPicks[m.id] && !hasKickedOff(m))
+  // Todos los partidos próximos (con equipos, sin terminar y sin haber iniciado),
+  // pronosticados o no, en orden cronológico: así "los de hoy y mañana" siempre se ven.
+  const upcoming = state.matches
+    .filter((m) => m._home && m._away && m.status !== "finished" && !hasKickedOff(m))
     .sort(byKickoff);
-  const upcoming = pickable.filter((m) => state.myPicks[m.id] && !hasKickedOff(m)).sort(byKickoff);
+  const pendingCount = upcoming.filter((m) => !state.myPicks[m.id]).length;
   const finished = state.matches.filter((m) => m.status === "finished" && state.myPicks[m.id])
     .sort((a, b) => new Date(b.kickoff) - new Date(a.kickoff));
 
@@ -135,11 +137,10 @@ export function renderMiQuiniela() {
       <div class="mq-summary">
         <div class="stat"><b>${totalPts}</b><span>puntos</span></div>
         <div class="stat"><b>${exactCount}</b><span>exactos 🎯</span></div>
-        <div class="stat stat--warn"><b>${pending.length}</b><span>por jugar</span></div>
+        <div class="stat stat--warn"><b>${pendingCount}</b><span>por jugar</span></div>
       </div>
 
-      ${section("⏳ Por pronosticar", pending, "Estás al día — no hay partidos pendientes.")}
-      ${section("✅ Pronosticados (próximos)", upcoming, "")}
+      ${section("⚽ Próximos partidos", upcoming, "No hay próximos partidos disponibles ahora mismo.")}
       ${section("🏁 Resultados", finished, "")}
     </section>`;
 }
@@ -152,10 +153,11 @@ function section(title, list, emptyMsg) {
 }
 
 function quinielaRow(m) {
+  const pend = m.status !== "finished" && !state.myPicks[m.id] && !hasKickedOff(m);
   return `
-    <article class="mq-row ${m.status === "finished" ? "is-done" : ""}" data-mid="${m.id}">
+    <article class="mq-row ${m.status === "finished" ? "is-done" : ""} ${pend ? "is-pending" : ""}" data-mid="${m.id}">
       <div class="mq-meta">
-        <span class="mno">M${m.id} · ${STAGE_LABEL[m.stage]}${m.group_code ? " " + m.group_code : ""}</span>
+        <span class="mno">M${m.id} · ${STAGE_LABEL[m.stage]}${m.group_code ? " " + m.group_code : ""}${pend ? ' · <span class="mq-pend">Pendiente</span>' : ""}</span>
         <span class="mdate">🗓️ ${fmtDate(m.kickoff)}</span>
       </div>
       <div class="mq-teams">

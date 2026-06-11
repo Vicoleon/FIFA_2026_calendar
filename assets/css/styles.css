@@ -605,3 +605,16 @@ td.lb-player { display: flex; align-items: center; gap: 9px; }
     transition: none !important;
   }
 }
+
+/* ── Mi Quiniela: marca de partido pendiente ── */
+.mq-row.is-pending { border-left: 3px solid var(--accent, #f4c84a); }
+.mq-pend {
+  display: inline-block;
+  background: var(--accent, #f4c84a);
+  color: #15171f;
+  font-weight: 700;
+  font-size: .72em;
+  padding: 1px 7px;
+  border-radius: 999px;
+  margin-left: 4px;
+}

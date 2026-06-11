@@ -176,6 +176,12 @@ export function editModal(m) {
 
   $("#ed-cancel", dlg).onclick = () => dlg.remove();
   $("#ed-save", dlg).onclick = async () => {
+    // Confirmación: escribir el marcador OFICIAL cuenta los puntos de todos.
+    const hs = $("#ed-hs", dlg).value, as = $("#ed-as", dlg).value;
+    const st = $("#ed-status", dlg).value;
+    if (st === "finished" && hs !== "" && as !== "") {
+      if (!confirm(`¿Seguro que deseas escribir el marcador OFICIAL ${hs}–${as} del partido M${m.id}?\n\nEsto NO es tu quiniela: marca el resultado real y reparte los puntos a todos los jugadores.`)) return;
+    }
     const homeId = known ? m._home : ($("#ed-home", dlg).value || null);
     const awayId = known ? m._away : ($("#ed-away", dlg).value || null);
     const patch = {
