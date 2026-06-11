@@ -74,32 +74,26 @@ Parámetros ajustables en `assets/js/config.js` (`PREDICTOR`).
 
 ---
 
-## 🔴 Datos en vivo (automáticos)
+## 🔴 Marcadores en vivo (automáticos) — ESPN, gratis
 
-Cuando un partido está en curso, la app trae el marcador (y el minuto) desde
-**football-data.org** y los muestra solos (tarjeta "● EN VIVO"), sincronizados en
-todos los dispositivos.
+Cuando un partido está en curso, la app trae el **marcador y el minuto** desde la
+**API pública no oficial de ESPN** (gratis, sin llave) y los muestra solos
+(tarjeta "● EN VIVO"), sincronizados en todos los dispositivos. Misma fuente que
+las estadísticas: ESPN cubre **todo** (marcador + stats + goleadores).
 
-Arquitectura: el frontend NO llama a la API externa directamente (sería inseguro y
-la bloquea CORS). En su lugar llama cada 60 s a una **Supabase Edge Function**
-(`live-scores`) que actúa de proxy: lee el token desde un secreto, consulta la API,
-mapea los equipos y actualiza la tabla `matches`. Realtime hace el resto.
+Arquitectura: la Edge Function `sync-espn` tiene un **modo rápido** `?mode=scores`
+que consulta **solo** el `scoreboard` de ESPN (marcador/minuto/estado), mapea los
+equipos y actualiza la tabla `matches`. Realtime refresca la UI en todos lados.
 
-> ⚠️ **Importante sobre el plan de football-data.org:**
-> - El plan **Free (€0)** entrega los marcadores **con retraso** (no en tiempo real):
->   los partidos se actualizan solos pero con demora, no minuto a minuto.
-> - Para marcadores **realmente en vivo** necesitas el plan **"Free w/ Livescores" (€12/mes)**.
->   El código es idéntico: solo cambias de plan con el mismo token, sin tocar nada.
-
-**Configurar (una vez):**
-1. Token en https://www.football-data.org/client/register
-2. Supabase → tu proyecto → **Edge Functions → Secrets** → nuevo secreto:
-   - Nombre: `FOOTBALL_DATA_TOKEN` · Valor: tu token
-3. ¡Listo! Fuera de horario de partidos la función sale barato (no gasta cuota).
-
-Probar el mapeo sin esperar a un partido: abre en el navegador
-`https://<tu-proyecto>.supabase.co/functions/v1/live-scores?debug=1`
-(devuelve el JSON de los partidos que reconoce, sin escribir nada).
+- **Automatización (sin navegador abierto):** un cron en Supabase (`pg_cron`)
+  ejecuta `sync-espn?mode=scores` **cada minuto** (`sync-espn-scores`, `* * * * *`).
+  La función tiene un *guard de ventana en vivo*: si no hay ningún partido activo
+  (arranque en [-3 h, +20 min] y sin finalizar) **no llama a ESPN**, así que correrlo
+  cada minuto es barato. ESPN actualiza el marcador casi en tiempo real.
+- **Nudge al abrir:** el frontend además llama `sync-espn` (modo `scores`) cada 60 s
+  mientras la página está abierta, solo para que el primer dato aparezca al instante.
+- **Probar el mapeo** sin esperar a un partido (no escribe nada):
+  `…/functions/v1/sync-espn?mode=scores&debug=1`
 
 ## 📊 Estadísticas automáticas (ESPN) — gratis
 
@@ -116,9 +110,10 @@ tarjetas) **y los goleadores** se obtienen de la **API pública no oficial de ES
 - ⚠️ Es una API **no oficial** (sin soporte ni SLA): puede cambiar. Para uso personal
   es práctica y gratuita. Alternativa "de verdad" con más detalle (xG real): FBref/Opta (de pago).
 
-> Reparto de fuentes: `live-scores` (football-data) para el marcador en vivo, y
-> `sync-espn` (ESPN) para las **estadísticas + goleadores**. Si prefieres, ESPN solo
-> puede cubrir ambas cosas gratis (avísame y consolido).
+> Fuente única: **ESPN** cubre **todo** gratis vía `sync-espn` — el marcador en vivo
+> (`?mode=scores`, cron cada minuto) y las **estadísticas + goleadores** (modo completo,
+> cron cada hora). Ya no se usa football-data.org. *(La función `live-scores` sigue
+> desplegada pero en desuso; el frontend dejó de llamarla.)*
 
 ## 🗂️ Estructura
 
