@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mundial 2026 — Calendario, Resultados y Pronósticos</title>
-  <meta name="description" content="Calendario interactivo de la Copa Mundial FIFA 2026: grupos, eliminatorias, resultados editables en línea, estadísticas por partido y pronósticos automáticos." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://ozdjeotbfxnbisyedioq.supabase.co https://ozdjeotbfxnbisyedioq.functions.supabase.co wss://ozdjeotbfxnbisyedioq.supabase.co; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'self'; object-src 'none'; form-action 'self'" />
+  <title>Quiniela Mundial 2026 — Pronostica, compite y gana con tus amigos</title>
+  <meta name="description" content="Quiniela del Mundial FIFA 2026: pronostica los marcadores, compite en grupos con tus amigos, sube en la tabla de posiciones y gana. Calendario completo, resultados en vivo y pronósticos." />
+  <meta property="og:title" content="Quiniela Mundial 2026" />
+  <meta property="og:description" content="Pronostica los marcadores del Mundial 2026 y compite con tus amigos. Crea tu grupo, invita y sube en la tabla." />
+  <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -13,34 +17,42 @@
     <div class="brand">
       <span class="ball">⚽</span>
       <div>
-        <h1>Mundial 2026</h1>
+        <h1>Quiniela 2026</h1>
         <small>Canadá · México · Estados Unidos</small>
       </div>
     </div>
     <nav class="tabs">
-      <button class="tab active" data-view="grupos">Grupos</button>
+      <button class="tab active" data-view="calendario">Calendario</button>
+      <button class="tab" data-view="grupos">Grupos</button>
       <button class="tab" data-view="eliminatorias">Eliminatorias</button>
-      <button class="tab" data-view="calendario">Calendario</button>
+      <button class="tab" data-view="miquiniela" data-auth>📝 Mi Quiniela</button>
+      <button class="tab" data-view="tabla" data-auth>🏆 Tabla</button>
+      <button class="tab" data-view="misgrupos" data-auth>👥 Mis grupos</button>
     </nav>
     <div class="tools">
-      <span id="editor-badge" class="badge"></span>
-      <button id="btn-pred" class="btn btn-ghost" title="Mostrar/ocultar pronósticos">🔮 Pronósticos</button>
-      <button id="btn-recalc" class="btn btn-ghost" hidden title="Recalcular y guardar pronósticos">♻️ Recalcular</button>
-      <button id="btn-login" class="btn">🔒 Modo edición</button>
+      <button id="btn-pred" class="btn btn-ghost" title="Mostrar/ocultar pronósticos de la casa">🔮</button>
+      <button id="btn-recalc" class="btn btn-ghost" hidden title="Recalcular y guardar pronósticos de la casa">♻️</button>
+      <span id="auth-area" class="auth-area"></span>
     </div>
   </header>
+
+  <div id="reminder" class="reminder-slot"></div>
 
   <main id="content" class="content"><p class="loading">Cargando datos…</p></main>
 
   <footer class="foot">
-    <p>Datos en vivo vía Supabase · Pronóstico Elo + Poisson · Cuadro según el sorteo oficial.
-       Inicia sesión como editor para cargar resultados y estadísticas.</p>
+    <p class="foot-credit">
+      Desarrollado por <a href="https://www.rubik-soft.com" target="_blank" rel="noopener">www.rubik-soft.com</a>
+    </p>
+    <p class="foot-sub">Datos en vivo vía Supabase · Pronóstico Elo + Poisson · Cuadro según el sorteo oficial.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.74.0"
+          integrity="sha384-b+VshJ+niaJb5lNc3Bqqo9KUTg3Hq/ZavF5+sP4EKFaHtYBTU+2K7JqGBPumqhlW"
+          crossorigin="anonymous"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/predictor.js"></script>
   <script src="assets/js/standings.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>

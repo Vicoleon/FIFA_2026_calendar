@@ -1,0 +1,18 @@
+# ============================================================
+#  Configuración de Edge Functions — fija la postura de auth en código.
+#  send-email exige JWT (lo llama un usuario). Las funciones de cron
+#  NO usan JWT: se protegen con el header x-cron-secret y usan service-role.
+# ============================================================
+project_id = "ozdjeotbfxnbisyedioq"
+
+[functions.send-email]
+verify_jwt = true
+
+[functions.daily-reminder]
+verify_jwt = false
+
+[functions.weekly-digest]
+verify_jwt = false
+
+[functions.auto-pick]
+verify_jwt = false

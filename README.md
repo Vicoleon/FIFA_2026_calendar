@@ -1,94 +1,77 @@
-# ⚽ Mundial 2026 — Calendario, Resultados y Pronósticos
+# ⚽ Quiniela Mundial 2026
 
-Aplicación web del **Mundial FIFA 2026** (Canadá · México · Estados Unidos) con:
+App web del **Mundial FIFA 2026** (Canadá · México · Estados Unidos) convertida en
+una **quiniela social**: pronostica los marcadores, compite con tus amigos en grupos,
+sube en la tabla de posiciones y gana.
 
-- 📅 **Calendario completo** — 104 partidos: 72 de fase de grupos (12 grupos A–L, 48 equipos) + el cuadro de eliminatorias de dieciseisavos a la final, según el sorteo oficial.
-- ✍️ **Resultados editables en línea** — inicias sesión como editor y cargas marcadores; los cambios se guardan en **Supabase** y se ven **en vivo** en cualquier dispositivo (Realtime).
-- 📊 **Estadísticas por partido** — posesión, tiros, córners, faltas, tarjetas, goleadores… guardadas en base de datos. Cada partido terminado muestra su tarjeta de estadísticas.
-- 🔮 **Pronósticos automáticos** — un motor **Elo + Poisson** calcula probabilidades de victoria/empate/derrota y el marcador más probable, y **se reajusta solo** conforme cargas resultados reales.
+**100% estática** (HTML/CSS/JS sin build) + **Supabase** (Postgres, Auth, Realtime,
+Edge Functions, pg_cron). Sin servidor propio.
 
-Es un sitio **100% estático** (HTML/CSS/JS sin compilación) + backend Supabase. Se puede abrir directo o publicar gratis en GitHub Pages, Netlify, Render, etc.
+> Desarrollado por **[www.rubik-soft.com](https://www.rubik-soft.com)**
 
 ---
 
-## 🚀 Cómo correrlo
+## ✨ Qué hace
 
-### Local
+**Base (calendario, intacto):**
+- 📅 Calendario completo — 104 partidos (72 de grupos + cuadro de eliminatorias).
+- ✍️ Resultados editables en línea (editores autorizados) con estadísticas por partido.
+- 🔮 Pronóstico de la casa **Elo + Poisson** que se reajusta solo.
+
+**Quiniela (nuevo):**
+- 🔐 **Inicio de sesión con Google.**
+- 📝 **Pronósticos por partido** (marcador exacto). Se bloquean al iniciar cada partido.
+- 🎯 **Puntaje** — marcador exacto = **3 pts**, resultado acertado = **1 pt**.
+- ★ **Joker / Doble** — un partido por jornada con puntos dobles.
+- 👥 **Grupos privados** — crea, comparte por **link** o **código**, invita por **email**.
+- 🏆 **Tabla de posiciones** global y por grupo, **en vivo**.
+- 💰 **Bote** por grupo — registra buy-in y pagos, calcula el premio al líder (solo registro).
+- 🧠 **Sabiduría de masas** + **cara a cara** con un rival (tras el cierre del partido).
+- 🏅 **Logros** — Jornada Perfecta, En Racha, Mataguigantes, El Profeta, Pleno.
+- ⏰ **Recordatorios** — banner in-app + correo diario; **resumen semanal** por correo.
+- 🛟 **Auto-pick** opcional — rellena con el pronóstico de la casa si no juegas a tiempo.
+- 📤 **Tarjetas compartibles** de tu posición/resultados (con link de invitación).
+
+## 🚀 Correr
+
 ```bash
-# desde la carpeta del proyecto
-python3 -m http.server 8080
-# abre http://localhost:8080
+python3 -m http.server 8080   # http://localhost:8080
 ```
-(o simplemente abre `index.html` en el navegador).
+Publicación gratis en GitHub Pages / Netlify / Render (es estático).
 
-### Publicar en GitHub Pages
-1. Sube el repo a GitHub (rama `main`).
-2. *Settings → Pages → Source: Deploy from a branch → `main` / root.*
-3. Tu sitio quedará en `https://<usuario>.github.io/FIFA_2026_calendar/`.
+## ⚙️ Configuración (3 pasos manuales)
 
-No hay que configurar nada más: las credenciales públicas de Supabase ya están en `assets/js/config.js`.
-
----
-
-## 🔐 Modo edición (cargar resultados)
-
-1. Clic en **🔒 Modo edición** → escribe tu correo → recibes un **código de 6 dígitos** por email → lo ingresas.
-2. Aparece **✏️ Editar** en cada tarjeta: marcador, estado (programado/en vivo/finalizado) y estadísticas por equipo.
-3. Botón **♻️ Recalcular** guarda una instantánea de los pronósticos en la base.
-
-La edición está protegida por **Row Level Security**: cualquiera puede *ver*, pero sólo los correos autorizados pueden *escribir*.
-
-**Autorizar más editores:** en Supabase → SQL Editor:
-```sql
-create or replace function public.is_editor()
-returns boolean language sql stable set search_path = '' as $$
-  select coalesce(auth.jwt() ->> 'email','') = any (array[
-    'joseleonsalgado@gmail.com',
-    'otro-correo@ejemplo.com'
-  ]);
-$$;
-```
-
----
-
-## 🧠 Cómo funciona el pronóstico
-
-`assets/js/predictor.js`
-
-1. Cada selección tiene un **rating Elo** inicial (columna `teams.elo`, editable).
-2. Al cargar resultados, los ratings se **recalculan en memoria** replicando los partidos terminados (Elo de fútbol con multiplicador por diferencia de goles). La semilla en la BD no se sobrescribe → el cálculo es determinista.
-3. Para cada partido pendiente se derivan los **goles esperados (λ)** de cada lado a partir de la diferencia de Elo (+ ventaja de anfitrión) y se construye una **matriz de Poisson** → probabilidades de 1/X/2 y marcador más probable.
-
-Parámetros ajustables en `assets/js/config.js` (`PREDICTOR`).
-
----
+Ver **[SETUP.md](SETUP.md)** — activar Google Sign-In, configurar Resend (correo) y
+programar las tareas (pg_cron). La base de datos ya está migrada.
 
 ## 🗂️ Estructura
 
 ```
-index.html                 # shell de la app y vistas (Grupos / Eliminatorias / Calendario)
-assets/css/styles.css       # estilos
-assets/js/config.js         # URL + clave pública de Supabase y parámetros del modelo
-assets/js/predictor.js      # motor Elo + Poisson
-assets/js/standings.js      # tablas de grupos + resolución del cuadro (1E, 2A, W74, mejores 3.º)
-assets/js/app.js            # carga de datos, render, editor, auth y realtime
-supabase/schema.sql         # respaldo del esquema de base de datos
+index.html
+assets/css/styles.css
+assets/js/
+  config.js predictor.js standings.js     # base (clásicos)
+  lib/{db,dom,state,teams}.js             # núcleo compartido (ES modules)
+  app.js                                   # router + bootstrap
+  auth.js calendar.js picks.js            # sesión, calendario, pronósticos
+  leaderboard.js groups.js invites.js     # tabla, grupos, invitaciones
+  crowd.js achievements.js share.js       # masas/h2h, logros, compartir
+  reminders.js profile.js                 # recordatorio in-app, perfil
+supabase/
+  migrations/*.sql                         # esquema (aplicado en vivo)
+  functions/{send-email,daily-reminder,weekly-digest,auto-pick}/
+docs/superpowers/specs/                    # diseño aprobado
 ```
 
-## 🗄️ Modelo de datos (Supabase)
+## 🔐 Seguridad
 
-| Tabla | Para qué |
-|-------|----------|
-| `teams` | 48 selecciones: grupo, posición, bandera, Elo |
-| `matches` | 104 partidos: fase, sede, fecha, marcador, placeholders del cuadro |
-| `match_stats` | estadísticas por equipo y partido |
-| `goals` | goleadores (jugador, minuto) |
-| `predictions` | instantánea de pronósticos guardados |
+Row Level Security en todo: cada quien edita solo sus picks; los picks ajenos se ocultan
+hasta el inicio del partido; el puntaje lo escribe solo el motor (security definer);
+membresía e invitaciones vía RPCs con token. La clave anónima de Supabase es pública
+por diseño; ningún secreto vive en el front.
 
----
+## 🧠 Puntaje (resumen)
 
-## ⚠️ Notas
-
-- Los equipos, grupos y el **calendario oficial completo de la fase de grupos** (72 partidos con sede, fecha y hora local) corresponden al sorteo final del Mundial 2026; el **cuadro de eliminatorias** (sedes y fechas) sigue el calendario oficial. Todo es **editable en línea** por si la FIFA ajusta algún horario.
-- La resolución de los "mejores terceros" usa una heurística por puntos/diferencia de gol; puedes corregir cualquier cruce manualmente desde el editor.
-- Las claves de Supabase incluidas son **públicas por diseño** (publishable/anon). La seguridad real vive en las políticas RLS de la base.
+Al marcar un partido como `finished`, un trigger calcula los puntos de cada pick
+(exacto = 3, resultado = 1, ×2 si era Joker) y evalúa logros. La tabla se actualiza
+en vivo por Realtime.
