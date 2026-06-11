@@ -235,10 +235,22 @@ body {
 .foot { text-align: center; color: var(--mut); font-size: 12px; padding: 24px; border-top: 1px solid var(--line); margin-top: 30px; }
 
 @media (max-width: 640px) {
-  .topbar { gap: 10px; }
-  .tabs { order: 3; width: 100%; }
-  .tools { width: 100%; }
+  .topbar { gap: 10px; padding: 12px 14px; }
+  .brand h1 { font-size: 19px; }
+  /* Pestañas en una sola fila deslizable (no se amontonan) */
+  .tabs {
+    order: 3; width: 100%;
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    gap: 4px; padding-bottom: 4px; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: 0 0 auto; padding: 8px 12px; font-size: 14px; }
+  /* Herramientas: que quepan y que la sesión quede siempre visible a la derecha */
+  .tools { width: 100%; flex-wrap: wrap; gap: 6px; }
+  .auth-area { margin-left: auto; }
   .row2 { grid-template-columns: 1fr; }
+  /* el menú de sesión nunca se sale de la pantalla */
+  .usermenu-pop { right: 0; min-width: min(220px, 78vw); }
 }
 
 /* ============================================================ */
@@ -360,12 +372,26 @@ body {
   padding-top: 9px;
   font-size: 13px;
 }
+/* Zona de pronóstico del usuario: claramente distinta del marcador oficial */
+.pick--edit {
+  border-top: 0;
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--acc2) 9%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--acc2) 45%, var(--line));
+  border-radius: var(--r-md);
+}
+.pick-tag {
+  display: block;
+  font-size: 10px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase;
+  color: var(--acc2); margin-bottom: 6px;
+}
 .pick-inputs { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .pk-h, .pk-a {
-  width: 48px; text-align: center;
+  width: 40px; text-align: center;
   background: var(--card); color: var(--txt);
   border: 1px solid var(--line); border-radius: var(--r-sm);
-  padding: 7px 4px; font-size: 16px; font-weight: 700;
+  padding: 6px 4px; font-size: 15px; font-weight: 700;
   -moz-appearance: textfield;
 }
 .pk-h::-webkit-outer-spin-button, .pk-h::-webkit-inner-spin-button,

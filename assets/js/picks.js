@@ -32,7 +32,8 @@ export function pickWidget(m) {
 
   const p = state.myPicks[m.id];
   return `
-    <div class="pick" data-mid="${m.id}">
+    <div class="pick pick--edit" data-mid="${m.id}">
+      <span class="pick-tag">📝 Tu pronóstico</span>
       <div class="pick-inputs">
         <input class="pk-h" type="number" min="0" max="${MAX_GOALS}" inputmode="numeric"
                value="${p?.home_score ?? ""}" aria-label="Goles ${esc(teamNameSafe(m._home))}">
@@ -42,8 +43,8 @@ export function pickWidget(m) {
         <button class="pk-joker ${p?.is_joker ? "on" : ""}" data-act="joker"
                 title="Joker: dobla los puntos de este partido (máx. 1 por jornada)">★</button>
         <button class="btn btn-sm btn-primary" data-act="savepick">${p ? "Actualizar" : "Guardar"}</button>
+        ${p ? `<button class="lnk pk-del" data-act="delpick">Borrar</button>` : ""}
       </div>
-      ${p ? `<button class="lnk pk-del" data-act="delpick">Borrar pronóstico</button>` : ""}
     </div>`;
 }
 
