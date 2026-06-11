@@ -7,6 +7,16 @@ window.APP_CONFIG = {
   SUPABASE_URL: "https://ozdjeotbfxnbisyedioq.supabase.co",
   SUPABASE_ANON_KEY: "sb_publishable_lM3KGHcfhBiuNpWdSca-jw_xiJrJngY",
 
+  APP_NAME: "Quiniela Mundial 2026",
+  RUBIK_URL: "https://www.rubik-soft.com",
+
+  // Editores autorizados (debe coincidir con public.is_editor() en la BD).
+  // Solo controla qué muestra la UI; la seguridad real vive en RLS.
+  EDITOR_EMAILS: ["joseleonsalgado@gmail.com"],
+
+  // Edge Function que envía correos (invitaciones). Se despliega en Supabase.
+  EMAIL_FN: "send-email",
+
   // Parámetros del motor de pronóstico
   PREDICTOR: {
     HOME_ADV: 35,           // ventaja Elo para el equipo "local" (sedes casi neutrales)

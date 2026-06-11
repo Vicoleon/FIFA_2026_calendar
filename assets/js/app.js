@@ -23,6 +23,13 @@ const state = {
   showPred: true, todayOnly: false, projection: false, groupFilter: null
 };
 
+// Editor autorizado por correo (la quiniela comparte la sesión de Supabase,
+// así que ya no basta con "hay sesión": debe ser un correo de la lista).
+const isEditor = () => {
+  const e = (state.session?.user?.email || "").toLowerCase();
+  return (window.APP_CONFIG.EDITOR_EMAILS || []).map((x) => x.toLowerCase()).includes(e);
+};
+
 // ¿ya empezó el Mundial? (según el reloj del dispositivo)
 const tournamentStarted = () => new Date() >= TOURNAMENT_START;
 // ¿el partido es de hoy? (fecha local del usuario)
@@ -248,7 +255,7 @@ function matchCard(m) {
     ? `<span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>`
     : `<span class="vs">vs</span>`;
   const hasStats = state.stats[m.id] && Object.keys(state.stats[m.id]).length;
-  const editor = !!state.session;
+  const editor = isEditor();
 
   return `
   <article class="card ${finished ? "card--done" : ""} ${live ? "card--live" : ""}" data-mid="${m.id}">
@@ -263,9 +270,11 @@ function matchCard(m) {
       ${score}
       ${teamChip(m._away, m.away_placeholder)}
     </div>
+    <div class="card-pick">${(!m._homeProj && !m._awayProj) ? (window.Quiniela?.pickWidget?.(m) ?? "") : ""}</div>
     <footer class="card-bot">
       <span class="mdate">🗓️ ${fmtDate(m.kickoff)}</span>
       <span class="actions">
+        ${finished && state.session ? `<button class="lnk" data-act="crowd">👥 Picks del grupo</button>` : ""}
         ${finished && hasStats ? `<button class="lnk" data-act="stats">📊 Estadísticas</button>` : ""}
         ${editor ? `<button class="lnk" data-act="edit">✏️ Editar</button>` : ""}
       </span>
@@ -416,14 +425,19 @@ function renderCalendar() {
 }
 
 function render() {
-  $("#editor-badge").textContent = state.session ? `🔓 Editor: ${state.session.user.email}` : "";
-  $("#btn-login").textContent = state.session ? "Cerrar sesión" : "🔒 Modo edición";
-  $("#btn-recalc").hidden = !state.session;
+  $("#btn-recalc").hidden = !isEditor();
   const started = tournamentStarted();
   $("#btn-today").hidden = !started;          // oculto hasta el 11 de junio
   if (!started) state.todayOnly = false;
   $("#btn-today").classList.toggle("active", state.todayOnly);
   $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === state.view));
+
+  // Vistas de la quiniela (Mi Quiniela / Tabla / Mis grupos / Perfil): las pinta la capa quiniela.
+  if (window.Quiniela?.isView?.(state.view)) {
+    $("#content").innerHTML = `<p class="loading">Cargando…</p>`;
+    window.Quiniela.renderInto(state.view);
+    return;
+  }
 
   let html = "";
   if (state.view === "grupos") html = renderGroups();
@@ -588,7 +602,6 @@ async function refresh() {
 
 function wireEvents() {
   $$(".tab").forEach((t) => t.onclick = () => { state.view = t.dataset.view; render(); });
-  $("#btn-login").onclick = loginFlow;
   $("#btn-recalc").onclick = recalcPredictions;
   $$(".td-opt").forEach((o) => (o.onclick = () => applyTheme(o.dataset.themeId)));
   applyTheme(currentTheme()); // marca el tema guardado como activo en el panel
@@ -621,12 +634,13 @@ function wireEvents() {
     const km = e.target.closest(".kb-match");
     if (km) {
       const m = state.matches.find((x) => x.id === +km.dataset.mid);
-      if (m && state.session) editModal(m);
+      if (m && isEditor()) editModal(m);
       return;
     }
     const btn = e.target.closest("button[data-act]");
     if (!btn) return;
     const card = btn.closest(".card");
+    if (!card) return; // botones de la quiniela (fuera de tarjeta) los maneja quiniela.js
     const m = state.matches.find((x) => x.id === +card.dataset.mid);
     if (btn.dataset.act === "edit") editModal(m);
     if (btn.dataset.act === "stats") {
@@ -650,6 +664,9 @@ async function syncLive() {
   // refresca la UI automáticamente. Fuera de horario de partidos sale barato.
   try { await db.functions.invoke("live-scores"); } catch (_) { /* sin red / sin token: ignora */ }
 }
+
+// Expuesto para la capa de quiniela (assets/js/quiniela.js).
+window.WC = { state, db, render, loadAll, computeBracketAndPredictions };
 
 (async function init() {
   wireEvents();
