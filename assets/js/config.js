@@ -7,7 +7,7 @@ window.APP_CONFIG = {
   SUPABASE_URL: "https://ozdjeotbfxnbisyedioq.supabase.co",
   SUPABASE_ANON_KEY: "sb_publishable_lM3KGHcfhBiuNpWdSca-jw_xiJrJngY",
 
-  APP_NAME: "Quiniela Mundial 2026",
+  APP_NAME: "FIFA Calendario 2026",
   RUBIK_URL: "https://www.rubik-soft.com",
 
   // Editores autorizados (debe coincidir con public.is_editor() en la BD).

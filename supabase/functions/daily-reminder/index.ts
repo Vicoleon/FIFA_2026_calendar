@@ -22,7 +22,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const HORIZON_HOURS = 36; // ventana de partidos próximos a recordar
 const HOURS_TO_MS = 60 * 60 * 1000;
 const DEFAULT_SITE_URL = "https://quiniela-mundial-2026.app";
-const DEFAULT_FROM = "Quiniela Mundial 2026 <no-reply@rubiksoft.dev>";
+const DEFAULT_FROM = "FIFA Calendario 2026 <no-reply@rubiksoft.dev>";
 
 // ---- CORS (por si se invoca manualmente desde un navegador) -
 const CORS_HEADERS = {
@@ -108,7 +108,7 @@ function buildEmailHtml(
     </a>
     <hr style="border:none;border-top:1px solid #1e2740;margin:24px 0 12px;">
     <p style="font-size:12px;color:#7e8aa3;margin:0;">
-      Hecho con cariño por <strong>RubikSoft</strong> · Quiniela Mundial 2026.
+      Hecho con cariño por <strong>RubikSoft</strong> · FIFA Calendario 2026.
     </p>
   </div>
 </body></html>`;

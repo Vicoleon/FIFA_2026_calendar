@@ -21,8 +21,8 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const FROM = "Quiniela Mundial 2026 <onboarding@resend.dev>"; // cambia al verificar tu dominio
-const BRAND = "Quiniela Mundial 2026";
+const FROM = "FIFA Calendario 2026 <onboarding@resend.dev>"; // cambia al verificar tu dominio
+const BRAND = "FIFA Calendario 2026";
 const FOOTER_URL = "https://www.rubik-soft.com";
 const FOOTER_TEXT = "Desarrollado por www.rubik-soft.com";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

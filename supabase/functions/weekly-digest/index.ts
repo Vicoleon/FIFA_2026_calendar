@@ -1,5 +1,5 @@
 // ============================================================
-//  Quiniela 2026 · Edge Function · weekly-digest
+//  FIFA Calendario 2026 · Edge Function · weekly-digest
 //  Resumen semanal por email (pensado para pg_cron, lunes).
 //
 //  Seguridad: verify_jwt=false. Exige cabecera 'x-cron-secret'
@@ -21,8 +21,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const DAYS_WINDOW = 7;                       // ventana del resumen (días)
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const UPCOMING_LIMIT = 5;                     // próximos partidos a listar
-const EMAIL_FROM = "Quiniela Mundial 2026 <quiniela@rubiksoft.dev>";
-const EMAIL_SUBJECT = "Tu resumen semanal · Quiniela Mundial 2026";
+const EMAIL_FROM = "FIFA Calendario 2026 <quiniela@rubiksoft.dev>";
+const EMAIL_SUBJECT = "Tu resumen semanal · FIFA Calendario 2026";
 
 // CORS: permite invocación desde cualquier origen (la auth real es x-cron-secret).
 const CORS_HEADERS = {
@@ -136,7 +136,7 @@ function buildEmailHtml(args: {
     <a href="${esc(siteUrl)}" style="display:inline-block;background:#4f46e5;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:bold;">Ir a mi quiniela →</a>
 
     <p style="margin:28px 0 0;font-size:12px;color:#6b7693;border-top:1px solid #232c47;padding-top:14px;">
-      Hecho con 💛 por <strong>RubikSoft</strong> · Quiniela Mundial 2026
+      Hecho con 💛 por <strong>RubikSoft</strong> · FIFA Calendario 2026
     </p>
   </div>
 </body>

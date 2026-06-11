@@ -46,7 +46,7 @@ export const actions = {
 export async function shareResultCard(opts = {}) {
   try {
     const cfg = window.APP_CONFIG || {};
-    const appName = cfg.APP_NAME || "Quiniela Mundial 2026";
+    const appName = cfg.APP_NAME || "FIFA Calendario 2026";
     const rubikUrl = cfg.RUBIK_URL || "https://www.rubik-soft.com";
     const link = (opts.link || siteUrl() || "").trim();
 

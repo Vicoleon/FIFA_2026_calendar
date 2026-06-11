@@ -152,7 +152,7 @@ function shareButton(rank, me, currentScope) {
       ? "Global"
       : state.myGroups.find((g) => g.id === currentScope)?.name || "mi grupo";
 
-  const title = `Voy #${rank} en la Quiniela Mundial 2026`;
+  const title = `Voy #${rank} en la quiniela · FIFA Calendario 2026`;
   const subtitle = `${scopeLabel} · ${me.total_pts} pts · ${me.exact_count} exactos 🎯`;
   const big = `#${rank} · ${me.total_pts} pts`;
 

@@ -1,4 +1,4 @@
-# Puesta en marcha — Quiniela Mundial 2026
+# Puesta en marcha — FIFA Calendario 2026
 
 La app es **100% estática** (HTML/CSS/JS) + **Supabase**. La base de datos ya está
 migrada y lista (proyecto `ozdjeotbfxnbisyedioq`). Solo faltan 3 pasos manuales que
