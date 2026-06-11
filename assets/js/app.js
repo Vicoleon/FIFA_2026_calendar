@@ -16,6 +16,7 @@ import * as crowd from "./crowd.js";
 import * as share from "./share.js";
 import * as profile from "./profile.js";
 import * as reminders from "./reminders.js";
+import * as theme from "./theme.js";
 
 // Vistas: clave -> { render(): string|Promise<string>, wire?(container) }
 const VIEWS = {
@@ -90,6 +91,7 @@ function wireStatic() {
   if (pred) pred.onclick = () => { state.showPred = !state.showPred; render(); };
   const recalc = $("#btn-recalc");
   if (recalc) recalc.onclick = () => calendar.recalcPredictions();
+  theme.wireThemeDock();
 }
 
 function subscribeRealtime() {
@@ -109,12 +111,13 @@ function subscribeRealtime() {
   document.addEventListener("quiniela:refresh", refresh);
   document.addEventListener("quiniela:nav", (e) => navigate(e.detail.view));
 
-  await auth.initAuth(() => { if (booted) refresh(); });
+  await auth.initAuth(() => { if (booted) { theme.applyUserTheme(); refresh(); } });
   try {
     await loadAll();
   } catch (e) {
     toast(e.message, "error");
   }
+  theme.applyUserTheme(); // prefiere el tema guardado en el perfil si hay sesión
   try {
     const dest = await invites.maybeHandleInviteParam(); // puede unir a un grupo
     if (dest) state.view = dest;

@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://ozdjeotbfxnbisyedioq.supabase.co https://ozdjeotbfxnbisyedioq.functions.supabase.co wss://ozdjeotbfxnbisyedioq.supabase.co; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'self'; object-src 'none'; form-action 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://ozdjeotbfxnbisyedioq.supabase.co https://ozdjeotbfxnbisyedioq.functions.supabase.co wss://ozdjeotbfxnbisyedioq.supabase.co; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; base-uri 'self'; object-src 'none'; form-action 'self'" />
   <title>Quiniela Mundial 2026 — Pronostica, compite y gana con tus amigos</title>
   <meta name="description" content="Quiniela del Mundial FIFA 2026: pronostica los marcadores, compite en grupos con tus amigos, sube en la tabla de posiciones y gana. Calendario completo, resultados en vivo y pronósticos." />
   <meta property="og:title" content="Quiniela Mundial 2026" />
   <meta property="og:description" content="Pronostica los marcadores del Mundial 2026 y compite con tus amigos. Crea tu grupo, invita y sube en la tabla." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;800&family=Poppins:wght@500;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <!-- aplica el tema guardado antes de pintar (evita parpadeo) -->
+  <script src="assets/js/theme-boot.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+  <aside id="theme-dock" aria-label="Tema visual">
+    <div class="td-title">🎨 Tema</div>
+    <button class="td-opt" data-theme-id="neon"><span class="td-sw sw-neon"></span>Neón</button>
+    <button class="td-opt" data-theme-id="fiesta"><span class="td-sw sw-fiesta"></span>Fiesta</button>
+    <button class="td-opt" data-theme-id="editorial"><span class="td-sw sw-editorial"></span>Editorial</button>
+  </aside>
+
   <header class="topbar">
     <div class="brand">
       <span class="ball">⚽</span>
