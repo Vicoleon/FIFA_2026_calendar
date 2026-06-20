@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mockup 3 · Álbum Panini Retro</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#efe7d4;--card:#fffdf7;--ink:#22324b;--rojo:#c0392b;--azul:#1c3f73;--oro:#caa14a;}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Archivo',system-ui;color:var(--ink);min-height:100vh;background:var(--paper);
+ background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px);
+ background-size:22px 22px}
+.wrap{max-width:1080px;margin:0 auto;padding:24px}
+.top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:4px solid var(--ink);padding-bottom:14px}
+.logo{font-family:'Anton';font-size:42px;letter-spacing:1px;color:var(--ink);text-transform:uppercase}
+.logo span{color:var(--rojo)}
+.pill{background:var(--ink);color:var(--paper);font-family:'Anton';letter-spacing:1px;padding:4px 12px;border-radius:4px;transform:rotate(-3deg)}
+.tabs{margin-left:auto;display:flex;gap:8px}
+.tab{font-family:'Anton';letter-spacing:1px;padding:7px 14px;border:3px solid var(--ink);border-radius:6px;background:var(--card);text-transform:uppercase;font-size:13px}
+.tab.on{background:var(--oro)}
+.sec{font-family:'Anton';font-size:24px;letter-spacing:1px;text-transform:uppercase;margin:26px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+/* sticker card */
+.stk{background:var(--card);border-radius:10px;padding:14px;position:relative;
+ border:2px dashed #b9ad8e;box-shadow:6px 6px 0 rgba(34,50,75,.15)}
+.stk::after{content:"";position:absolute;inset:5px;border:1px solid #e7dcc1;border-radius:7px;pointer-events:none}
+.tag{position:absolute;top:-12px;left:14px;background:var(--rojo);color:#fff;font-family:'Anton';letter-spacing:1px;
+ font-size:12px;padding:3px 10px;border-radius:4px;transform:rotate(-2deg)}
+.tag.live{background:var(--ink);animation:b 1.2s infinite}@keyframes b{50%{opacity:.5}}
+.meta{display:flex;justify-content:flex-end;font-size:11px;color:#9a8e6f;font-weight:700;margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:10px 0}
+.tm{display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:900;text-align:center;font-size:14px}
+.fl{font-size:40px;width:64px;height:64px;display:grid;place-items:center;border-radius:8px;
+ background:var(--paper);border:2px solid var(--ink)}
+.sc{font-family:'Anton';font-size:30px;color:var(--rojo)}
+.vs{font-family:'Anton';color:var(--azul);font-size:18px}
+.cap{text-align:center;font-size:11px;color:#9a8e6f;font-weight:700;border-top:1px dashed #cdbf9d;padding-top:7px;text-transform:uppercase;letter-spacing:1px}
+.foot{margin-top:28px;text-align:center;font-family:'Anton';letter-spacing:1px;color:#9a8e6f}
+</style></head><body><div class="wrap">
+<div class="top">
+  <div class="logo">CRÓNICA <span>26</span></div><div class="pill">ÁLBUM MUNDIAL</div>
+  <div class="tabs"><span class="tab on">Grupos</span><span class="tab">Llave</span><span class="tab">Hoy</span></div>
+</div>
+
+<div class="sec">★ Estampas del día</div>
+<div class="grid">
+  <div class="stk"><div class="tag live">● EN VIVO 67'</div><div class="meta">M13 · GRUPO C</div>
+    <div class="row"><div class="tm"><div class="fl">🇧🇷</div>BRASIL</div><div class="sc">1–0</div><div class="tm"><div class="fl">🇲🇦</div>MARRUECOS</div></div>
+    <div class="cap">Estadio MetLife · Nueva York</div></div>
+  <div class="stk"><div class="tag">FINAL</div><div class="meta">M01 · GRUPO A</div>
+    <div class="row"><div class="tm"><div class="fl">🇲🇽</div>MÉXICO</div><div class="sc">2–1</div><div class="tm"><div class="fl">🇿🇦</div>SUDÁFRICA</div></div>
+    <div class="cap">Estadio Azteca · Ciudad de México</div></div>
+  <div class="stk"><div class="tag" style="background:var(--azul)">PRÓX.</div><div class="meta">M55 · GRUPO J</div>
+    <div class="row"><div class="tm"><div class="fl">🇦🇷</div>ARGENTINA</div><div class="vs">VS</div><div class="tm"><div class="fl">🇩🇿</div>ARGELIA</div></div>
+    <div class="cap">Pronóstico: 2–0 · 74% 🇦🇷</div></div>
+</div>
+
+<div class="sec">★ Figuritas difíciles (sorpresas)</div>
+<div class="grid">
+  <div class="stk"><div class="tag" style="background:var(--oro);color:#3a2e08">CRACK</div><div class="meta">DG +4</div>
+    <div class="row"><div class="tm"><div class="fl">🇲🇦</div>MARRUECOS</div><div class="vs">↑</div><div class="tm"><div class="fl">📈</div>EN ALZA</div></div>
+    <div class="cap">Rating del torneo: +120 (peso ×2)</div></div>
+</div>
+<div class="foot">¡PEGA TU ESTAMPA Y SIGUE EL MUNDIAL!</div>
+</div></body></html>
