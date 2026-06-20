@@ -22,7 +22,7 @@
 
   const TEMPLATE = `
     <section class="race">
-      <button id="race-back" class="btn btn-ghost race-back">← Mi Quiniela</button>
+      <button id="race-back" class="btn btn-ghost race-back">← Mis grupos</button>
       <div class="race-head">
         <div>
           <h3 class="race-title">🏇 La carrera de la quiniela</h3>
@@ -49,8 +49,8 @@
     container.innerHTML = TEMPLATE;
     S = { root: container, t: 0, playing: false, raf: null, last: null, dur: 850, race: null, meId: null, G: {} };
 
-    // Volver a la vista "Mi Quiniela" (la enruta la capa de quiniela vía evento).
-    q("#race-back").onclick = () => document.dispatchEvent(new CustomEvent("quiniela:nav", { detail: { view: "miquiniela" } }));
+    // Volver a la vista "Mis grupos" (la enruta la capa de quiniela vía evento).
+    q("#race-back").onclick = () => document.dispatchEvent(new CustomEvent("quiniela:nav", { detail: { view: "misgrupos" } }));
     q("#race-load").onclick = () => loadRace(q("#race-code").value);
     q("#race-code").addEventListener("keydown", (e) => { if (e.key === "Enter") loadRace(q("#race-code").value); });
     q("#race-group").onchange = (e) => e.target.value && loadRace(e.target.value);

@@ -68,9 +68,7 @@ export const actions = {
   signin: () => signInWithGoogle(),
   joker: (btn) => { btn.classList.toggle("on"); },
   savepick: (btn) => savePickFromEl(btn.closest(".pick")),
-  delpick: (btn) => delPickFromEl(btn.closest(".pick")),
-  // Abre la carrera de la quiniela (la pinta app.js en la vista "carrera").
-  vercarrera: () => document.dispatchEvent(new CustomEvent("quiniela:nav", { detail: { view: "carrera" } }))
+  delpick: (btn) => delPickFromEl(btn.closest(".pick"))
 };
 
 async function savePickFromEl(pickEl) {
@@ -114,28 +112,12 @@ async function delPickFromEl(pickEl) {
 }
 
 // ── Vista "Mi Quiniela" ──
-
-/** Botón-banner que abre la carrera de la quiniela (visible con o sin sesión). */
-function raceEntryHtml(subtitle) {
-  return `
-    <button class="mq-race" data-act="vercarrera" aria-label="Ver la carrera de la quiniela">
-      <span class="mq-race-ic" aria-hidden="true">🏇</span>
-      <span class="mq-race-tx">
-        <b>Ver la carrera de la quiniela</b>
-        <span>${subtitle}</span>
-      </span>
-      <span class="mq-race-go" aria-hidden="true">→</span>
-    </button>`;
-}
-
 export function renderMiQuiniela() {
   if (!state.session) {
     return `<section class="panel center">
       <h2>📝 Mi Quiniela</h2>
       <p>Inicia sesión con Google para pronosticar los marcadores y competir con tus amigos.</p>
       <button class="btn btn-primary btn-google" data-act="signin"><span class="g">G</span> Iniciar sesión</button>
-      <div class="mq-or">o</div>
-      ${raceEntryHtml("Con el código de tu grupo — sin iniciar sesión")}
     </section>`;
   }
 
@@ -158,8 +140,6 @@ export function renderMiQuiniela() {
         <div class="stat"><b>${exactCount}</b><span>exactos 🎯</span></div>
         <div class="stat stat--warn"><b>${pendingCount}</b><span>por jugar</span></div>
       </div>
-
-      ${raceEntryHtml("Mira cómo va tu grupo, día a día")}
 
       ${section("⚽ Próximos partidos", upcoming, "No hay próximos partidos disponibles ahora mismo.")}
       ${section("🏁 Resultados", finished, "")}

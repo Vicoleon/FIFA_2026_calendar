@@ -124,8 +124,16 @@ function groupCardHtml(group, rows) {
       ${inviteHtml(group)}
       ${potHtml(group, pot, paidCount, leader)}
       ${standingsHtml(group, rows, isOwner)}
+      ${raceCardBtnHtml(group)}
       ${adminFooterHtml(group, isOwner)}
     </article>`;
+}
+
+/** Botón que abre la carrera animada de ESTE grupo (guarda su código y navega). */
+function raceCardBtnHtml(group) {
+  return `<button class="btn grp-race-btn" data-act="grp-carrera" data-code="${esc(group.join_code)}">
+    🏇 Ver la carrera de la quiniela
+  </button>`;
 }
 
 /** Bloque de invitaciones (link + email). */
@@ -227,8 +235,16 @@ export const actions = {
   "grp-paid": (btn) => setPaid(btn.dataset.gid, btn.dataset.uid, btn.dataset.paid === "1"),
   "grp-remove": (btn) => removeMember(btn.dataset.gid, btn.dataset.uid),
   "grp-leave": (btn) => leaveGroup(btn.dataset.gid),
-  "grp-delete": (btn) => deleteGroup(btn.dataset.gid)
+  "grp-delete": (btn) => deleteGroup(btn.dataset.gid),
+  "grp-carrera": (btn) => openRace(btn.dataset.code)
 };
+
+/** Guarda el código del grupo y abre la vista de la carrera (la pinta app.js). */
+function openRace(code) {
+  // Misma clave que usa race.js (CODE_KEY) para autoseleccionar este grupo.
+  try { localStorage.setItem("wc-quiniela-code", code); } catch (_) {}
+  document.dispatchEvent(new CustomEvent("quiniela:nav", { detail: { view: "carrera" } }));
+}
 
 /** Crea un grupo a partir del formulario contenedor del botón. */
 async function createGroup(btn) {

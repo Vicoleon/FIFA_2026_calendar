@@ -430,8 +430,8 @@ function render() {
   $("#btn-today").hidden = !started;          // oculto hasta el 11 de junio
   if (!started) state.todayOnly = false;
   $("#btn-today").classList.toggle("active", state.todayOnly);
-  // La carrera vive dentro de la quiniela: mantén "Mi Quiniela" resaltada mientras se ve.
-  const activeTab = state.view === "carrera" ? "miquiniela" : state.view;
+  // La carrera se abre desde "Mis grupos": mantén esa pestaña resaltada mientras se ve.
+  const activeTab = state.view === "carrera" ? "misgrupos" : state.view;
   $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === activeTab));
 
   // Carrera de la quiniela

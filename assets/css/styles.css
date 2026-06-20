@@ -457,30 +457,6 @@ body {
 .stat span { font-size: 12px; color: var(--mut); }
 .stat--warn b { color: var(--warn); }
 
-/* Entrada a la carrera de la quiniela (botón-banner dentro de Mi Quiniela) */
-.mq-race {
-  display: flex; align-items: center; gap: 14px; width: 100%;
-  margin-bottom: 22px; padding: 14px 16px; text-align: left; cursor: pointer;
-  color: var(--txt); font: inherit;
-  background: linear-gradient(120deg, color-mix(in srgb, var(--acc) 18%, var(--card2)), var(--card2));
-  border: 1px solid color-mix(in srgb, var(--acc) 40%, var(--line));
-  border-radius: var(--r-lg);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.mq-race:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: var(--acc); }
-.mq-race:active { transform: translateY(0); }
-.mq-race:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
-.mq-race-ic { font-size: 26px; line-height: 1; flex: none; }
-.mq-race-tx { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
-.mq-race-tx b { font-size: 15px; }
-.mq-race-tx span { font-size: 12px; color: var(--mut); }
-.mq-race-go { font-size: 20px; color: var(--acc); flex: none; transition: transform .18s ease; }
-.mq-race:hover .mq-race-go { transform: translateX(4px); }
-/* Separador "o" (con líneas a los lados) y ancho acotado del banner en la pantalla de inicio de sesión */
-.mq-or { display: flex; align-items: center; gap: 12px; max-width: 420px; margin: 18px auto 12px; color: var(--mut); font-size: 12px; }
-.mq-or::before, .mq-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-.panel.center .mq-race { max-width: 420px; margin-left: auto; margin-right: auto; }
-
 .mq-h {
   font-size: 16px; margin: 22px 0 12px;
   padding-bottom: 6px; border-bottom: 2px solid var(--acc); display: inline-block;
@@ -575,6 +551,15 @@ td.lb-player { display: flex; align-items: center; gap: 9px; }
 .grp-pot-amount b { font-size: 24px; font-weight: 800; color: var(--gold); }
 .grp-pot-label { font-size: 13px; color: var(--mut); }
 .grp-pot-meta { font-size: 12px; color: var(--mut); margin-top: 4px; }
+
+/* Botón para abrir la carrera animada desde la tarjeta de cada grupo */
+.grp-race-btn {
+  width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: color-mix(in srgb, var(--acc) 14%, var(--card2)); color: var(--txt);
+  border: 1px solid color-mix(in srgb, var(--acc) 38%, var(--line)); font-weight: 700;
+  transition: background .18s ease, border-color .18s ease;
+}
+.grp-race-btn:hover { filter: none; border-color: var(--acc); background: color-mix(in srgb, var(--acc) 24%, var(--card2)); }
 
 /* Tabla de miembros del grupo */
 .grp-table { width: 100%; border-collapse: collapse; }
