@@ -432,6 +432,9 @@ function render() {
   $("#btn-today").classList.toggle("active", state.todayOnly);
   $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === state.view));
 
+  // Carrera de la quiniela
+  if (state.view === "carrera") { window.QuinielaRace?.mount($("#content")); return; }
+
   // Vistas de la quiniela (Mi Quiniela / Tabla / Mis grupos / Perfil): las pinta la capa quiniela.
   if (window.Quiniela?.isView?.(state.view)) {
     $("#content").innerHTML = `<p class="loading">Cargando…</p>`;
