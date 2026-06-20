@@ -68,7 +68,9 @@ export const actions = {
   signin: () => signInWithGoogle(),
   joker: (btn) => { btn.classList.toggle("on"); },
   savepick: (btn) => savePickFromEl(btn.closest(".pick")),
-  delpick: (btn) => delPickFromEl(btn.closest(".pick"))
+  delpick: (btn) => delPickFromEl(btn.closest(".pick")),
+  // Abre la carrera de la quiniela (la pinta app.js en la vista "carrera").
+  vercarrera: () => document.dispatchEvent(new CustomEvent("quiniela:nav", { detail: { view: "carrera" } }))
 };
 
 async function savePickFromEl(pickEl) {
@@ -140,6 +142,15 @@ export function renderMiQuiniela() {
         <div class="stat"><b>${exactCount}</b><span>exactos 🎯</span></div>
         <div class="stat stat--warn"><b>${pendingCount}</b><span>por jugar</span></div>
       </div>
+
+      <button class="mq-race" data-act="vercarrera" aria-label="Ver la carrera de la quiniela">
+        <span class="mq-race-ic" aria-hidden="true">🏇</span>
+        <span class="mq-race-tx">
+          <b>Ver la carrera de la quiniela</b>
+          <span>Mira cómo va tu grupo, día a día</span>
+        </span>
+        <span class="mq-race-go" aria-hidden="true">→</span>
+      </button>
 
       ${section("⚽ Próximos partidos", upcoming, "No hay próximos partidos disponibles ahora mismo.")}
       ${section("🏁 Resultados", finished, "")}

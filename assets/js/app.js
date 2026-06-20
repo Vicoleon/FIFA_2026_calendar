@@ -430,7 +430,9 @@ function render() {
   $("#btn-today").hidden = !started;          // oculto hasta el 11 de junio
   if (!started) state.todayOnly = false;
   $("#btn-today").classList.toggle("active", state.todayOnly);
-  $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === state.view));
+  // La carrera vive dentro de la quiniela: mantén "Mi Quiniela" resaltada mientras se ve.
+  const activeTab = state.view === "carrera" ? "miquiniela" : state.view;
+  $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === activeTab));
 
   // Carrera de la quiniela
   if (state.view === "carrera") { window.QuinielaRace?.mount($("#content")); return; }
