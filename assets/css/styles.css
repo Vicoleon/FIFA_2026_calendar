@@ -476,6 +476,10 @@ body {
 .mq-race-tx span { font-size: 12px; color: var(--mut); }
 .mq-race-go { font-size: 20px; color: var(--acc); flex: none; transition: transform .18s ease; }
 .mq-race:hover .mq-race-go { transform: translateX(4px); }
+/* Separador "o" (con líneas a los lados) y ancho acotado del banner en la pantalla de inicio de sesión */
+.mq-or { display: flex; align-items: center; gap: 12px; max-width: 420px; margin: 18px auto 12px; color: var(--mut); font-size: 12px; }
+.mq-or::before, .mq-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.panel.center .mq-race { max-width: 420px; margin-left: auto; margin-right: auto; }
 
 .mq-h {
   font-size: 16px; margin: 22px 0 12px;
