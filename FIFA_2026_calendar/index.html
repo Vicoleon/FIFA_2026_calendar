@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundial 2026 — Calendario, Resultados y Pronósticos</title>
+  <meta name="description" content="Calendario interactivo de la Copa Mundial FIFA 2026: grupos, eliminatorias, resultados editables en línea, estadísticas por partido y pronósticos automáticos." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="ball">⚽</span>
+      <div>
+        <h1>Mundial 2026</h1>
+        <small>Canadá · México · Estados Unidos</small>
+      </div>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-view="grupos">Grupos</button>
+      <button class="tab" data-view="eliminatorias">Eliminatorias</button>
+      <button class="tab" data-view="calendario">Calendario</button>
+    </nav>
+    <div class="tools">
+      <span id="editor-badge" class="badge"></span>
+      <button id="btn-pred" class="btn btn-ghost" title="Mostrar/ocultar pronósticos">🔮 Pronósticos</button>
+      <button id="btn-recalc" class="btn btn-ghost" hidden title="Recalcular y guardar pronósticos">♻️ Recalcular</button>
+      <button id="btn-login" class="btn">🔒 Modo edición</button>
+    </div>
+  </header>
+
+  <main id="content" class="content"><p class="loading">Cargando datos…</p></main>
+
+  <footer class="foot">
+    <p>Datos en vivo vía Supabase · Pronóstico Elo + Poisson · Cuadro según el sorteo oficial.
+       Inicia sesión como editor para cargar resultados y estadísticas.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/predictor.js"></script>
+  <script src="assets/js/standings.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
