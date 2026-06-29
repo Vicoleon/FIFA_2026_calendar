@@ -119,9 +119,12 @@ Deno.serve(async (req) => {
     if (!isShootout) return null;
     return { home_pens: swap ? ap : hp, away_pens: swap ? hp : ap };
   };
+  // Empareja por EQUIPOS con tolerancia de ±1 día (nuestros kickoff pueden venir
+  // desfasados y cruzar la medianoche). El cruce de equipos es único por torneo.
   const findMine = (hid: string, aid: string, day: string) =>
     (ours || []).find((o: any) =>
-      o.home_team && o.away_team && o.kickoff && o.kickoff.slice(0, 10) === day &&
+      o.home_team && o.away_team && o.kickoff &&
+      Math.abs(new Date(o.kickoff.slice(0, 10)).getTime() - new Date(day).getTime()) <= 864e5 &&
       ((o.home_team === hid && o.away_team === aid) || (o.home_team === aid && o.away_team === hid)));
 
   // ============================================================
@@ -166,12 +169,15 @@ Deno.serve(async (req) => {
       if (!isNaN(oa)) patch.away_score = oa;
       const pens = penOf(ev, H, A, swap);
       if (pens) { patch.home_pens = pens.home_pens; patch.away_pens = pens.away_pens; }
+      // auto-corrige el kickoff al de ESPN si difiere (sana desfases de horario)
+      if (ev.date && mine.kickoff && new Date(mine.kickoff).getTime() !== new Date(ev.date).getTime()) patch.kickoff = ev.date;
 
       // sólo escribe si cambió algo (evita writes/eventos Realtime redundantes)
       const changed = mine.status !== status
         || (patch.home_score != null && mine.home_score !== patch.home_score)
         || (patch.away_score != null && mine.away_score !== patch.away_score)
         || (mine.minute ?? null) !== (minute ?? null)
+        || patch.kickoff != null
         || (!!pens && ((mine.home_pens ?? null) !== patch.home_pens || (mine.away_pens ?? null) !== patch.away_pens));
       out.push({ id: mine.id, ...patch, changed });
       if (!debug && changed) await supa.from("matches").update(patch).eq("id", mine.id);
@@ -207,6 +213,7 @@ Deno.serve(async (req) => {
       if (!isNaN(oa)) patch.away_score = oa;
       const pens = penOf(ev, H, A, swap);
       if (pens) { patch.home_pens = pens.home_pens; patch.away_pens = pens.away_pens; }
+      if (ev.date && mine.kickoff && new Date(mine.kickoff).getTime() !== new Date(ev.date).getTime()) patch.kickoff = ev.date;
 
       const sum = await fetch(`${ESPN}/${league}/summary?event=${ev.id}`).then((r) => r.ok ? r.json() : null);
       const statRows: any[] = [];
