@@ -253,7 +253,7 @@ function matchCard(m) {
   const showScore = finished || live;
   const hasPens = m.home_pens != null && m.away_pens != null;
   const score = showScore
-    ? `<span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>${hasPens ? `<span class="pens">(pen ${m.home_pens}-${m.away_pens})</span>` : ""}`
+    ? `<span class="scorebox"><span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>${hasPens ? `<span class="pens">(pen ${m.home_pens}-${m.away_pens})</span>` : ""}</span>`
     : `<span class="vs">vs</span>`;
   const hasStats = state.stats[m.id] && Object.keys(state.stats[m.id]).length;
   const editor = isEditor();
