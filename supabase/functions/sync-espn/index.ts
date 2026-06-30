@@ -56,7 +56,9 @@ const extractStats = (tb: any) => ({
   red_cards: getStat(tb?.statistics, ["redCards"]),
 });
 const isGoalEvent = (ke: any) => ke?.scoringPlay === true || /goal/i.test(ke?.type?.text || "");
-const minOf = (ke: any) => parseInt(String(ke?.clock?.displayValue || "").replace(/\D/g, "")) || null;
+// minuto base del gol: parseInt corta en el primer no-dígito, así "45'+2'" -> 45
+// (NO quitar todos los no-dígitos: eso convertiría "45'+2'" en 452).
+const minOf = (ke: any) => { const n = parseInt(String(ke?.clock?.displayValue || "")); return isNaN(n) ? null : n; };
 
 // minuto de juego SOLO cuando el partido está en curso (state === "in").
 const liveMinute = (displayClock: any, state: string): number | null => {
@@ -241,12 +243,17 @@ Deno.serve(async (req) => {
 
       out.push({ id: mine.id, ...patch, stats_filas: statRows.length, goles: goalRows.length });
       if (!debug) {
-        await supa.from("matches").update(patch).eq("id", mine.id);
         if (statRows.length) await supa.from("match_stats").upsert(statRows, { onConflict: "match_id,team_id" });
-        if (goalRows.length) {
-          await supa.from("goals").delete().eq("match_id", mine.id); // evita duplicados al re-sincronizar
-          await supa.from("goals").insert(goalRows);
+        if (sum) {
+          // ESPN devolvió el summary => lista de goleadores autoritativa (puede ser vacía):
+          // borra los previos y reinserta. Así se limpian goles que ESPN ya no reporta
+          // (corrección) en vez de dejar goleadores fantasma. Gatea el delete a tener
+          // summary, no a goalRows.length, para no borrar si falló la consulta a ESPN.
+          await supa.from("goals").delete().eq("match_id", mine.id);
+          if (goalRows.length) await supa.from("goals").insert(goalRows);
         }
+        // matches AL FINAL: su evento Realtime ve ya escritos stats y goleadores.
+        await supa.from("matches").update(patch).eq("id", mine.id);
       }
     }
   }

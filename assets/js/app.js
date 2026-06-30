@@ -662,6 +662,7 @@ function wireEvents() {
   db.channel("rt-matches")
     .on("postgres_changes", { event: "*", schema: "public", table: "matches" }, refresh)
     .on("postgres_changes", { event: "*", schema: "public", table: "match_stats" }, refresh)
+    .on("postgres_changes", { event: "*", schema: "public", table: "goals" }, refresh)
     .subscribe();
 }
 
