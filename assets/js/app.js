@@ -135,51 +135,71 @@ function simulateTitleOdds(N) {
   const adv = window.Predictor.advantage, exp = window.Predictor.expectedScore;
   const champ = {}, final = {};
   state.teams.forEach((t) => { champ[t.id] = 0; final[t.id] = 0; });
+  // ganador real de un cruce ya terminado (penales incluidos), o null si no se jugó
+  const actualWinner = (m) => {
+    if (m.status !== "finished" || m.home_score == null || m.away_score == null || !m.home_team || !m.away_team) return null;
+    if (m.home_score === m.away_score) {
+      if (m.home_pens == null || m.away_pens == null || m.home_pens === m.away_pens) return null;
+      return m.home_pens > m.away_pens ? m.home_team : m.away_team;
+    }
+    return m.home_score > m.away_score ? m.home_team : m.away_team;
+  };
   const ko = state.matches.filter((m) => m.stage !== "group").sort((a, b) => a.id - b.id)
-    .map((m) => ({ id: m.id, h: m.home_placeholder, a: m.away_placeholder }));
+    .map((m) => ({ id: m.id, h: m.home_placeholder, a: m.away_placeholder,
+                   ht: m.home_team, at: m.away_team, win: actualWinner(m) }));
   const byGroup = {};
   GROUPS.forEach((g) => (byGroup[g] = state.teams.filter((t) => t.group_code === g).map((t) => t.id)));
+  // si la fase de grupos ya terminó, los clasificados son REALES y no se re-simulan
+  const groupsDone = GROUPS.every((g) => window.Standings.groupComplete(state.matches, g));
 
   for (let s = 0; s < N; s++) {
     const rank = {}, thirdsArr = [];
-    GROUPS.forEach((g) => {
-      const tm = byGroup[g].map((id) => ({ id, pts: 0, gd: 0, rnd: Math.random() }));
-      const P = [[0,1],[2,3],[0,2],[1,3],[0,3],[1,2]];
-      P.forEach(([i, j]) => {
-        const A = tm[i], B = tm[j], pa = exp(r[A.id], r[B.id]);
-        const pd = Math.max(0.07, 0.30 - Math.abs(pa - 0.5) * 0.5);
-        const pAw = (1 - pd) * pa, pBw = (1 - pd) * (1 - pa), x = Math.random();
-        if (x < pAw) { A.pts += 3; A.gd++; B.gd--; }
-        else if (x < pAw + pBw) { B.pts += 3; B.gd++; A.gd--; }
-        else { A.pts++; B.pts++; }
+    if (!groupsDone) {
+      GROUPS.forEach((g) => {
+        const tm = byGroup[g].map((id) => ({ id, pts: 0, gd: 0, rnd: Math.random() }));
+        const P = [[0,1],[2,3],[0,2],[1,3],[0,3],[1,2]];
+        P.forEach(([i, j]) => {
+          const A = tm[i], B = tm[j], pa = exp(r[A.id], r[B.id]);
+          const pd = Math.max(0.07, 0.30 - Math.abs(pa - 0.5) * 0.5);
+          const pAw = (1 - pd) * pa, pBw = (1 - pd) * (1 - pa), x = Math.random();
+          if (x < pAw) { A.pts += 3; A.gd++; B.gd--; }
+          else if (x < pAw + pBw) { B.pts += 3; B.gd++; A.gd--; }
+          else { A.pts++; B.pts++; }
+        });
+        tm.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
+        rank[g] = tm.map((t) => t.id);
+        thirdsArr.push({ g, ...tm[2] });
       });
-      tm.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
-      rank[g] = tm.map((t) => t.id);
-      thirdsArr.push({ g, ...tm[2] });
-    });
-    thirdsArr.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
+      thirdsArr.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.rnd - a.rnd);
+    }
     const top8 = thirdsArr.slice(0, 8), used = new Set();
     const thirdFor = (gs) => {
       for (const t of top8) if (gs.includes(t.g) && !used.has(t.g)) { used.add(t.g); return t.id; }
       const f = top8.find((t) => !used.has(t.g)); if (f) { used.add(f.g); return f.id; } return null;
     };
     const winOf = {};
-    const res = (ph) => {
+    // resuelve un slot: prefiere el equipo REAL ya determinado; si no, el simulado
+    const res = (ph, persisted) => {
+      if (persisted) return persisted;
       let m;
-      if (m = ph.match(/^([12])([A-L])$/)) return rank[m[2]][(+m[1]) - 1];
+      if (m = ph.match(/^([12])([A-L])$/)) return rank[m[2]] ? rank[m[2]][(+m[1]) - 1] : null;
       if (m = ph.match(/^3([A-L]+)$/)) return thirdFor(m[1]);
       if (m = ph.match(/^W(\d+)$/)) return winOf[+m[1]];
       return null; // L## (bronce) no cuenta para el título
     };
     ko.forEach((k) => {
       if (k.id === 103) return; // tercer lugar
-      const h = res(k.h), a = res(k.a);
+      const h = res(k.h, k.ht), a = res(k.a, k.at);
       if (k.id === 104) { if (h) final[h]++; if (a) final[a]++; }
-      const w = (h && a) ? (Math.random() < exp(r[h] + adv(h), r[a]) ? h : a) : (h || a);
+      // si el cruce ya se jugó, usa el ganador REAL; si no, simúlalo por Elo
+      let w = k.win;
+      if (!w) w = (h && a) ? (Math.random() < exp(r[h] + adv(h), r[a]) ? h : a) : (h || a);
       if (k.id === 104) { if (w) champ[w]++; } else if (w) winOf[k.id] = w;
     });
   }
+  // solo equipos que SIGUEN VIVOS (los eliminados quedan en 0% y se omiten)
   return state.teams.map((t) => ({ id: t.id, champ: champ[t.id] / N, final: final[t.id] / N }))
+    .filter((o) => o.champ > 0 || o.final > 0)
     .sort((a, b) => b.champ - a.champ);
 }
 
