@@ -69,8 +69,14 @@
     if (wl) {
       const m = matches.find((x) => x.id === parseInt(wl[2], 10));
       if (!m || m.status !== "finished" || m.home_score == null) return null;
-      const homeWon = m.home_score > m.away_score; // (penales no modelados: usar marcador)
-      if (m.home_score === m.away_score) return null;
+      let homeWon;
+      if (m.home_score === m.away_score) {
+        // Empate en tiempo reglamentario: se define por penales (home_pens/away_pens).
+        if (m.home_pens == null || m.away_pens == null || m.home_pens === m.away_pens) return null;
+        homeWon = m.home_pens > m.away_pens;
+      } else {
+        homeWon = m.home_score > m.away_score;
+      }
       const winner = homeWon ? m.home_team : m.away_team;
       const loser = homeWon ? m.away_team : m.home_team;
       return wl[1] === "W" ? winner : loser;

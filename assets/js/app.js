@@ -251,8 +251,9 @@ function matchCard(m) {
   const finished = m.status === "finished";
   const live = m.status === "live";
   const showScore = finished || live;
+  const hasPens = m.home_pens != null && m.away_pens != null;
   const score = showScore
-    ? `<span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>`
+    ? `<span class="score">${m.home_score ?? 0} - ${m.away_score ?? 0}</span>${hasPens ? `<span class="pens">(pen ${m.home_pens}-${m.away_pens})</span>` : ""}`
     : `<span class="vs">vs</span>`;
   const hasStats = state.stats[m.id] && Object.keys(state.stats[m.id]).length;
   const editor = isEditor();
@@ -262,7 +263,7 @@ function matchCard(m) {
     <header class="card-top">
       <span class="mno">M${m.id} · ${STAGE_LABEL[m.stage]}${m.group_code ? " " + m.group_code : ""}</span>
       ${live
-        ? `<span class="live-badge">● EN VIVO${m.minute != null ? " " + m.minute + "'" : ""}</span>`
+        ? `<span class="live-badge">● ${hasPens ? "PENALES" : `EN VIVO${m.minute != null ? " " + m.minute + "'" : ""}`}</span>`
         : `<span class="mvenue">📍 ${esc(m.venue || "Por definir")}</span>`}
     </header>
     <div class="card-mid">
@@ -325,24 +326,25 @@ const BRACKET = {
 const mById = (id) => state.matches.find((m) => m.id === id);
 
 // un "slot" del cuadro: equipo resuelto (bandera + código) o la etiqueta (1E, 3ABCDF…)
-function kbSlot(teamId, ph, score, proj) {
+function kbSlot(teamId, ph, score, proj, pens) {
   if (teamId) {
     const t = state.teamMap[teamId];
-    return `<div class="kb-slot ${proj ? "kb-proj" : ""}"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}</span>` : ""}</div>`;
+    return `<div class="kb-slot ${proj ? "kb-proj" : ""}"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}${pens != null ? ` <small class="kb-pen" title="penales">(${pens})</small>` : ""}</span>` : ""}</div>`;
   }
   return `<div class="kb-slot kb-ph"><span class="kb-team">${esc(ph || "—")}</span></div>`;
 }
 function kbMatch(id) {
   const m = mById(id); if (!m) return "";
   const sc = m.status === "finished" || m.status === "live";
+  const hasPens = m.home_pens != null && m.away_pens != null;
   const p = m._pred;
   const pred = (state.showPred && p)
     ? `<div class="kb-pred"><span class="kb-pscore">🔮 ${p.predHome}-${p.predAway}</span>
         <span class="kb-pbar"><i class="ph" style="width:${Math.round(p.pHomeWin*100)}%"></i><i class="pd" style="width:${Math.round(p.pDraw*100)}%"></i><i class="pa" style="width:${Math.round(p.pAwayWin*100)}%"></i></span></div>`
     : "";
   return `<div class="kb-match ${m.status === "live" ? "kb-live" : ""}" data-mid="${id}" title="M${id} · ${esc(m.venue || "")} · ${fmtDate(m.kickoff)}">
-    ${kbSlot(m._home, m.home_placeholder, sc ? m.home_score : null, m._homeProj)}
-    ${kbSlot(m._away, m.away_placeholder, sc ? m.away_score : null, m._awayProj)}
+    ${kbSlot(m._home, m.home_placeholder, sc ? m.home_score : null, m._homeProj, hasPens ? m.home_pens : null)}
+    ${kbSlot(m._away, m.away_placeholder, sc ? m.away_score : null, m._awayProj, hasPens ? m.away_pens : null)}
     ${pred}
   </div>`;
 }
