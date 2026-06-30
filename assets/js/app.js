@@ -329,7 +329,7 @@ const mById = (id) => state.matches.find((m) => m.id === id);
 function kbSlot(teamId, ph, score, proj, pens) {
   if (teamId) {
     const t = state.teamMap[teamId];
-    return `<div class="kb-slot ${proj ? "kb-proj" : ""}"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}${pens != null ? `<small class="kb-pen" title="penales">${pens}</small>` : ""}</span>` : ""}</div>`;
+    return `<div class="kb-slot ${proj ? "kb-proj" : ""}"><span class="kb-team">${t.flag} ${teamId}</span>${score != null ? `<span class="kb-sc">${score}${pens != null ? ` <small class="kb-pen" title="penales">(${pens})</small>` : ""}</span>` : ""}</div>`;
   }
   return `<div class="kb-slot kb-ph"><span class="kb-team">${esc(ph || "—")}</span></div>`;
 }

@@ -128,7 +128,7 @@ body {
 .kb-slot + .kb-slot { border-top: 1px solid var(--line); }
 .kb-ph .kb-team { color: var(--mut); font-style: italic; font-weight: 500; }
 .kb-sc { font-weight: 800; color: var(--acc); }
-.kb-pen { font-size: .72em; font-weight: 700; color: var(--mut); margin-left: 2px; vertical-align: super; }
+.kb-pen { font-size: 11px; font-weight: 700; color: var(--warn, #ffb020); white-space: nowrap; }
 .kb-center { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 160px; gap: 8px; padding: 0 8px; }
 .kb-title { font-size: 14px; font-weight: 900; letter-spacing: .5px; text-transform: uppercase; color: #d4a017; text-align: center; font-family: var(--font-head); }
 .kb-trophy { font-size: 48px; filter: drop-shadow(0 4px 12px #000); }
