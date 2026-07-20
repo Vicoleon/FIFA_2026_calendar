@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "mataguigantes",
+        "match_id": 8,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-13T21:06:00.558704+00:00"
+    },
+    {
+        "id": 2,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 31,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-14T21:56:01.365372+00:00"
+    },
+    {
+        "id": 3,
+        "user_id": "06eb3b24-1586-453d-aacc-3cb8a764b0af",
+        "code": "mataguigantes",
+        "match_id": 31,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-14T21:56:01.365372+00:00"
+    },
+    {
+        "id": 4,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "mataguigantes",
+        "match_id": 37,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-15T20:59:00.931788+00:00"
+    },
+    {
+        "id": 5,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "mataguigantes",
+        "match_id": 44,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-16T00:05:00.585616+00:00"
+    },
+    {
+        "id": 6,
+        "user_id": "8b18453a-ab73-4608-85a2-71901d9d3118",
+        "code": "mataguigantes",
+        "match_id": 38,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-16T03:04:00.590275+00:00"
+    },
+    {
+        "id": 7,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 1,
+        "group_id": null,
+        "earned_at": "2026-06-18T04:02:27.523263+00:00"
+    },
+    {
+        "id": 8,
+        "user_id": "4d176ce8-05cc-4a0b-bf7b-4f7e5ef609f4",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 1,
+        "group_id": null,
+        "earned_at": "2026-06-18T04:02:27.523263+00:00"
+    },
+    {
+        "id": 9,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 1,
+        "group_id": "22431463-9a2a-4854-bacf-8b9ea3df792b",
+        "earned_at": "2026-06-18T04:02:27.523263+00:00"
+    },
+    {
+        "id": 10,
+        "user_id": "8b18453a-ab73-4608-85a2-71901d9d3118",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 1,
+        "group_id": "22431463-9a2a-4854-bacf-8b9ea3df792b",
+        "earned_at": "2026-06-18T04:02:27.523263+00:00"
+    },
+    {
+        "id": 11,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 3,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-18T17:59:01.187005+00:00"
+    },
+    {
+        "id": 12,
+        "user_id": "06eb3b24-1586-453d-aacc-3cb8a764b0af",
+        "code": "mataguigantes",
+        "match_id": 3,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-18T17:59:01.187005+00:00"
+    },
+    {
+        "id": 13,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 22,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-20T05:06:42.437229+00:00"
+    },
+    {
+        "id": 14,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 28,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-21T01:56:13.6614+00:00"
+    },
+    {
+        "id": 15,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "mataguigantes",
+        "match_id": 39,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-21T21:02:00.843788+00:00"
+    },
+    {
+        "id": 16,
+        "user_id": "06eb3b24-1586-453d-aacc-3cb8a764b0af",
+        "code": "mataguigantes",
+        "match_id": 46,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-22T00:05:11.369581+00:00"
+    },
+    {
+        "id": 17,
+        "user_id": "3f7dd80d-8b0f-4aec-86ec-eb1c6f796532",
+        "code": "mataguigantes",
+        "match_id": 46,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-22T00:05:11.369581+00:00"
+    },
+    {
+        "id": 18,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 69,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-23T22:00:54.280317+00:00"
+    },
+    {
+        "id": 19,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": null,
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 20,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": null,
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 21,
+        "user_id": "4d176ce8-05cc-4a0b-bf7b-4f7e5ef609f4",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": null,
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 22,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": null,
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 23,
+        "user_id": "d389bc8c-f75b-4782-83b6-3e850a80c7c6",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": "22431463-9a2a-4854-bacf-8b9ea3df792b",
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 24,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 2,
+        "group_id": "8fbefc29-d58c-401a-89ad-b206a68ee490",
+        "earned_at": "2026-06-24T03:58:54.218963+00:00"
+    },
+    {
+        "id": 25,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 35,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-26T00:58:55.274831+00:00"
+    },
+    {
+        "id": 26,
+        "user_id": "06eb3b24-1586-453d-aacc-3cb8a764b0af",
+        "code": "mataguigantes",
+        "match_id": 35,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-26T00:58:55.274831+00:00"
+    },
+    {
+        "id": 27,
+        "user_id": "7a3e3295-bd61-489a-a6c2-8ecd4141f727",
+        "code": "mataguigantes",
+        "match_id": 23,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-26T04:02:55.58824+00:00"
+    },
+    {
+        "id": 28,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 47,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-27T02:00:00.558311+00:00"
+    },
+    {
+        "id": 29,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "mataguigantes",
+        "match_id": 47,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-27T02:00:00.558311+00:00"
+    },
+    {
+        "id": 30,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 41,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-27T05:04:00.521573+00:00"
+    },
+    {
+        "id": 31,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "mataguigantes",
+        "match_id": 41,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-27T05:04:00.521573+00:00"
+    },
+    {
+        "id": 32,
+        "user_id": "8b18453a-ab73-4608-85a2-71901d9d3118",
+        "code": "mataguigantes",
+        "match_id": 41,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-06-27T05:04:00.521573+00:00"
+    },
+    {
+        "id": 33,
+        "user_id": "0be59d53-7847-4bbf-9f20-4bb9b10e29cc",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": null,
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 34,
+        "user_id": "4d176ce8-05cc-4a0b-bf7b-4f7e5ef609f4",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": null,
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 35,
+        "user_id": "3f7dd80d-8b0f-4aec-86ec-eb1c6f796532",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": null,
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 36,
+        "user_id": "7a3e3295-bd61-489a-a6c2-8ecd4141f727",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": null,
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 37,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "pleno",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": null,
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 38,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": "22431463-9a2a-4854-bacf-8b9ea3df792b",
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 39,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "el_profeta",
+        "match_id": null,
+        "matchday": 3,
+        "group_id": "8fbefc29-d58c-401a-89ad-b206a68ee490",
+        "earned_at": "2026-06-28T04:00:00.965144+00:00"
+    },
+    {
+        "id": 40,
+        "user_id": "77254a8f-3c84-404e-8261-e20825c72198",
+        "code": "mataguigantes",
+        "match_id": 91,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-07-05T22:04:52.737254+00:00"
+    },
+    {
+        "id": 41,
+        "user_id": "8a2c8d5d-9b2d-4fb7-bbb8-b6eb752f5e13",
+        "code": "mataguigantes",
+        "match_id": 101,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-07-14T21:00:00.567245+00:00"
+    },
+    {
+        "id": 42,
+        "user_id": "241b0f03-f5d4-404e-b53b-145c110c2293",
+        "code": "mataguigantes",
+        "match_id": 103,
+        "matchday": null,
+        "group_id": null,
+        "earned_at": "2026-07-18T23:03:00.586139+00:00"
+    }
+]

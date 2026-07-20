@@ -1,0 +1,32 @@
+[
+    {
+        "code": "jornada_perfecta",
+        "name": "Jornada Perfecta",
+        "description": "Acertaste el marcador exacto de TODOS los partidos de una jornada",
+        "emoji": "\ud83c\udfaf"
+    },
+    {
+        "code": "racha",
+        "name": "En Racha",
+        "description": "3 marcadores exactos consecutivos",
+        "emoji": "\ud83d\udd25"
+    },
+    {
+        "code": "mataguigantes",
+        "name": "Mataguigantes",
+        "description": "Acertaste un resultado que el modelo daba con menos de 25% de probabilidad",
+        "emoji": "\ud83d\udc32"
+    },
+    {
+        "code": "el_profeta",
+        "name": "El Profeta",
+        "description": "Fuiste quien m\u00e1s puntos hizo en una jornada dentro de un grupo",
+        "emoji": "\ud83d\udd2e"
+    },
+    {
+        "code": "pleno",
+        "name": "Pleno",
+        "description": "Llenaste tu quiniela completa de una jornada",
+        "emoji": "\u2705"
+    }
+]
