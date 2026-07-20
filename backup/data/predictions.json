@@ -1,0 +1,1042 @@
+[
+    {
+        "match_id": 5,
+        "p_home_win": 0.1265,
+        "p_draw": 0.2031,
+        "p_away_win": 0.6702,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 6,
+        "p_home_win": 0.21,
+        "p_draw": 0.237,
+        "p_away_win": 0.553,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 11,
+        "p_home_win": 0.6337,
+        "p_draw": 0.2153,
+        "p_away_win": 0.1509,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 12,
+        "p_home_win": 0.6999,
+        "p_draw": 0.1921,
+        "p_away_win": 0.1078,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 17,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 18,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 73,
+        "p_home_win": 0.2361,
+        "p_draw": 0.2437,
+        "p_away_win": 0.5201,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 83,
+        "p_home_win": 0.6614,
+        "p_draw": 0.2061,
+        "p_away_win": 0.1322,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 84,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 76,
+        "p_home_win": 0.8504,
+        "p_draw": 0.1199,
+        "p_away_win": 0.0287,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 85,
+        "p_home_win": 0.7293,
+        "p_draw": 0.1802,
+        "p_away_win": 0.0902,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 3,
+        "p_home_win": 0.6917,
+        "p_draw": 0.1952,
+        "p_away_win": 0.1128,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 4,
+        "p_home_win": 0.7518,
+        "p_draw": 0.1704,
+        "p_away_win": 0.0774,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 9,
+        "p_home_win": 0.6427,
+        "p_draw": 0.2124,
+        "p_away_win": 0.1447,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 10,
+        "p_home_win": 0.8189,
+        "p_draw": 0.1375,
+        "p_away_win": 0.0429,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 15,
+        "p_home_win": 0.1377,
+        "p_draw": 0.2089,
+        "p_away_win": 0.6532,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 16,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 74,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-29T19:49:55.703+00:00"
+    },
+    {
+        "match_id": 75,
+        "p_home_win": 0.6273,
+        "p_draw": 0.2173,
+        "p_away_win": 0.1553,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-29T19:49:55.703+00:00"
+    },
+    {
+        "match_id": 64,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-24T03:56:56.269+00:00"
+    },
+    {
+        "match_id": 77,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 78,
+        "p_home_win": 0.261,
+        "p_draw": 0.2488,
+        "p_away_win": 0.4902,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 41,
+        "p_home_win": 0.6543,
+        "p_draw": 0.2086,
+        "p_away_win": 0.1369,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 42,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 47,
+        "p_home_win": 0.491,
+        "p_draw": 0.2487,
+        "p_away_win": 0.2603,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 45,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 46,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 48,
+        "p_home_win": 0.0574,
+        "p_draw": 0.1528,
+        "p_away_win": 0.7892,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 53,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 51,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 52,
+        "p_home_win": 0.6011,
+        "p_draw": 0.2249,
+        "p_away_win": 0.1739,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 54,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 79,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 57,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 58,
+        "p_home_win": 0.1982,
+        "p_draw": 0.2334,
+        "p_away_win": 0.5683,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 80,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 81,
+        "p_home_win": 0.8189,
+        "p_draw": 0.1375,
+        "p_away_win": 0.0429,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 63,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 82,
+        "p_home_win": 0.7228,
+        "p_draw": 0.1829,
+        "p_away_win": 0.094,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-30T03:56:56.126+00:00"
+    },
+    {
+        "match_id": 59,
+        "p_home_win": 0.3727,
+        "p_draw": 0.2582,
+        "p_away_win": 0.3691,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 60,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 65,
+        "p_home_win": 0.3189,
+        "p_draw": 0.2562,
+        "p_away_win": 0.4249,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 66,
+        "p_home_win": 0.7134,
+        "p_draw": 0.1868,
+        "p_away_win": 0.0995,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 62,
+        "p_home_win": 0.036,
+        "p_draw": 0.1294,
+        "p_away_win": 0.8337,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 1,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 2,
+        "p_home_win": 0.4098,
+        "p_draw": 0.2571,
+        "p_away_win": 0.3331,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 7,
+        "p_home_win": 0.6097,
+        "p_draw": 0.2225,
+        "p_away_win": 0.1677,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 8,
+        "p_home_win": 0.1082,
+        "p_draw": 0.1923,
+        "p_away_win": 0.6992,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 13,
+        "p_home_win": 0.8337,
+        "p_draw": 0.1294,
+        "p_away_win": 0.036,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 14,
+        "p_home_win": 0.0799,
+        "p_draw": 0.1725,
+        "p_away_win": 0.7472,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 23,
+        "p_home_win": 0.1855,
+        "p_draw": 0.2291,
+        "p_away_win": 0.5853,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 24,
+        "p_home_win": 0.3815,
+        "p_draw": 0.2581,
+        "p_away_win": 0.3604,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 29,
+        "p_home_win": 0.0716,
+        "p_draw": 0.1657,
+        "p_away_win": 0.7623,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 30,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 27,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 28,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 35,
+        "p_home_win": 0.6397,
+        "p_draw": 0.2134,
+        "p_away_win": 0.1468,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 36,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-25T23:30:00.881+00:00"
+    },
+    {
+        "match_id": 33,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 21,
+        "p_home_win": 0.7876,
+        "p_draw": 0.1536,
+        "p_away_win": 0.0582,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 22,
+        "p_home_win": 0.7063,
+        "p_draw": 0.1896,
+        "p_away_win": 0.1038,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 26,
+        "p_home_win": 0.3331,
+        "p_draw": 0.2571,
+        "p_away_win": 0.4098,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 19,
+        "p_home_win": 0.8029,
+        "p_draw": 0.1459,
+        "p_away_win": 0.0506,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 20,
+        "p_home_win": 0.3085,
+        "p_draw": 0.2553,
+        "p_away_win": 0.4361,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-11T16:32:03.812+00:00"
+    },
+    {
+        "match_id": 31,
+        "p_home_win": 0.853,
+        "p_draw": 0.1184,
+        "p_away_win": 0.0276,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 32,
+        "p_home_win": 0.6488,
+        "p_draw": 0.2104,
+        "p_away_win": 0.1406,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 37,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 38,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 34,
+        "p_home_win": 0.052,
+        "p_draw": 0.1474,
+        "p_away_win": 0.8,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 43,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 44,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T20:33:12.991+00:00"
+    },
+    {
+        "match_id": 39,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 40,
+        "p_home_win": 0.0823,
+        "p_draw": 0.1743,
+        "p_away_win": 0.743,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 25,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-14T18:37:41.178+00:00"
+    },
+    {
+        "match_id": 49,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 50,
+        "p_home_win": 0.0935,
+        "p_draw": 0.1826,
+        "p_away_win": 0.7235,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 55,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 56,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 61,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 86,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 87,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 88,
+        "p_home_win": 0.4261,
+        "p_draw": 0.2561,
+        "p_away_win": 0.3177,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 89,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 90,
+        "p_home_win": 0.2705,
+        "p_draw": 0.2504,
+        "p_away_win": 0.479,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 91,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-02T19:37:16.429+00:00"
+    },
+    {
+        "match_id": 67,
+        "p_home_win": 0.7472,
+        "p_draw": 0.1725,
+        "p_away_win": 0.0799,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-16T15:33:37.026+00:00"
+    },
+    {
+        "match_id": 92,
+        "p_home_win": 0.2366,
+        "p_draw": 0.2438,
+        "p_away_win": 0.5195,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 93,
+        "p_home_win": 0.1864,
+        "p_draw": 0.2295,
+        "p_away_win": 0.5841,
+        "pred_home_score": 0,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 69,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 70,
+        "p_home_win": 0.0529,
+        "p_draw": 0.1483,
+        "p_away_win": 0.7982,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-20T18:21:02.892+00:00"
+    },
+    {
+        "match_id": 71,
+        "p_home_win": 0.0253,
+        "p_draw": 0.1151,
+        "p_away_win": 0.8586,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 72,
+        "p_home_win": 0.7828,
+        "p_draw": 0.156,
+        "p_away_win": 0.0607,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-27T16:47:22.361+00:00"
+    },
+    {
+        "match_id": 68,
+        "p_home_win": 0.5966,
+        "p_draw": 0.2261,
+        "p_away_win": 0.1772,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-06-17T22:23:51.572+00:00"
+    },
+    {
+        "match_id": 98,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 100,
+        "p_home_win": 0.854,
+        "p_draw": 0.1178,
+        "p_away_win": 0.0272,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 103,
+        "p_home_win": 0.5705,
+        "p_draw": 0.2329,
+        "p_away_win": 0.1965,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 104,
+        "p_home_win": 0.5741,
+        "p_draw": 0.232,
+        "p_away_win": 0.1938,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-05T22:06:47.065+00:00"
+    },
+    {
+        "match_id": 94,
+        "p_home_win": 0.3376,
+        "p_draw": 0.2574,
+        "p_away_win": 0.405,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-06T21:22:34.105+00:00"
+    },
+    {
+        "match_id": 95,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-06T21:22:34.105+00:00"
+    },
+    {
+        "match_id": 96,
+        "p_home_win": 0.3006,
+        "p_draw": 0.2545,
+        "p_away_win": 0.4449,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-06T21:22:34.105+00:00"
+    },
+    {
+        "match_id": 97,
+        "p_home_win": 0.8586,
+        "p_draw": 0.1151,
+        "p_away_win": 0.0253,
+        "pred_home_score": 2,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-06T21:22:34.105+00:00"
+    },
+    {
+        "match_id": 99,
+        "p_home_win": 0.1045,
+        "p_draw": 0.19,
+        "p_away_win": 0.7052,
+        "pred_home_score": 0,
+        "pred_away_score": 2,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-06T21:22:34.105+00:00"
+    },
+    {
+        "match_id": 101,
+        "p_home_win": 0.5789,
+        "p_draw": 0.2308,
+        "p_away_win": 0.1902,
+        "pred_home_score": 1,
+        "pred_away_score": 0,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-14T02:58:36.345+00:00"
+    },
+    {
+        "match_id": 102,
+        "p_home_win": 0.3034,
+        "p_draw": 0.2548,
+        "p_away_win": 0.4418,
+        "pred_home_score": 1,
+        "pred_away_score": 1,
+        "model": "elo-poisson-v1",
+        "updated_at": "2026-07-14T02:58:36.345+00:00"
+    }
+]

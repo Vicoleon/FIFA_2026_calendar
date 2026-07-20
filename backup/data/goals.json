@@ -1,0 +1,2774 @@
+[
+    {
+        "id": 116,
+        "match_id": 1,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 9,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 117,
+        "match_id": 1,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 118,
+        "match_id": 2,
+        "team_id": "CZE",
+        "player": null,
+        "minute": 59,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 119,
+        "match_id": 2,
+        "team_id": "KOR",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 120,
+        "match_id": 2,
+        "team_id": "KOR",
+        "player": null,
+        "minute": 80,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3524,
+        "match_id": 57,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 38,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3525,
+        "match_id": 57,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 905,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3526,
+        "match_id": 51,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 14,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3527,
+        "match_id": 51,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3528,
+        "match_id": 51,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3529,
+        "match_id": 52,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 43,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3530,
+        "match_id": 52,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 48,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3531,
+        "match_id": 52,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 53,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3532,
+        "match_id": 52,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 58,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3533,
+        "match_id": 52,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 903,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3534,
+        "match_id": 58,
+        "team_id": "JOR",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3535,
+        "match_id": 58,
+        "team_id": "ALG",
+        "player": null,
+        "minute": 69,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3536,
+        "match_id": 58,
+        "team_id": "ALG",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4191,
+        "match_id": 12,
+        "team_id": "BIH",
+        "player": null,
+        "minute": 29,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4192,
+        "match_id": 12,
+        "team_id": "BIH",
+        "player": null,
+        "minute": 34,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 4193,
+        "match_id": 12,
+        "team_id": "QAT",
+        "player": null,
+        "minute": 42,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2306,
+        "match_id": 3,
+        "team_id": "CZE",
+        "player": null,
+        "minute": 6,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2307,
+        "match_id": 3,
+        "team_id": "RSA",
+        "player": null,
+        "minute": 83,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 2308,
+        "match_id": 9,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 74,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2309,
+        "match_id": 9,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 84,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2310,
+        "match_id": 9,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2311,
+        "match_id": 9,
+        "team_id": "BIH",
+        "player": null,
+        "minute": 903,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2312,
+        "match_id": 9,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 907,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 959,
+        "match_id": 20,
+        "team_id": "AUS",
+        "player": null,
+        "minute": 27,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 960,
+        "match_id": 20,
+        "team_id": "AUS",
+        "player": null,
+        "minute": 75,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 961,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 6,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 962,
+        "match_id": 25,
+        "team_id": "CUW",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 963,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 38,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 964,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 455,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 965,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 47,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 966,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 68,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 967,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 78,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 968,
+        "match_id": 25,
+        "team_id": "GER",
+        "player": null,
+        "minute": 88,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 969,
+        "match_id": 31,
+        "team_id": "NED",
+        "player": null,
+        "minute": 51,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 970,
+        "match_id": 31,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 57,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 971,
+        "match_id": 31,
+        "team_id": "NED",
+        "player": null,
+        "minute": 64,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 972,
+        "match_id": 31,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 89,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 973,
+        "match_id": 26,
+        "team_id": "CIV",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 974,
+        "match_id": 32,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 275,
+        "match_id": 7,
+        "team_id": "BIH",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 276,
+        "match_id": 7,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 78,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 277,
+        "match_id": 19,
+        "team_id": "USA",
+        "player": null,
+        "minute": 7,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 278,
+        "match_id": 19,
+        "team_id": "USA",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 279,
+        "match_id": 19,
+        "team_id": "USA",
+        "player": null,
+        "minute": 455,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 280,
+        "match_id": 19,
+        "team_id": "PAR",
+        "player": null,
+        "minute": 73,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 281,
+        "match_id": 19,
+        "team_id": "USA",
+        "player": null,
+        "minute": 908,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 975,
+        "match_id": 32,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 30,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 976,
+        "match_id": 32,
+        "team_id": "TUN",
+        "player": null,
+        "minute": 43,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 977,
+        "match_id": 32,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 59,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 978,
+        "match_id": 32,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 84,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 979,
+        "match_id": 32,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 906,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2313,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 16,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1954,
+        "match_id": 56,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1955,
+        "match_id": 56,
+        "team_id": "JOR",
+        "player": null,
+        "minute": 50,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1956,
+        "match_id": 56,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 76,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 1957,
+        "match_id": 56,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 9012,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 474,
+        "match_id": 8,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 17,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 475,
+        "match_id": 8,
+        "team_id": "QAT",
+        "player": null,
+        "minute": 904,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 476,
+        "match_id": 13,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 477,
+        "match_id": 13,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 32,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1958,
+        "match_id": 61,
+        "team_id": "POR",
+        "player": null,
+        "minute": 6,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1959,
+        "match_id": 61,
+        "team_id": "COD",
+        "player": null,
+        "minute": 455,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1960,
+        "match_id": 67,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 12,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 1164,
+        "match_id": 37,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 20,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1165,
+        "match_id": 37,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 66,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 1166,
+        "match_id": 44,
+        "team_id": "KSA",
+        "player": null,
+        "minute": 41,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1167,
+        "match_id": 44,
+        "team_id": "URU",
+        "player": null,
+        "minute": 80,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 478,
+        "match_id": 14,
+        "team_id": "SCO",
+        "player": null,
+        "minute": 28,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1168,
+        "match_id": 38,
+        "team_id": "NZL",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1169,
+        "match_id": 38,
+        "team_id": "IRN",
+        "player": null,
+        "minute": 32,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1170,
+        "match_id": 38,
+        "team_id": "NZL",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1171,
+        "match_id": 38,
+        "team_id": "IRN",
+        "player": null,
+        "minute": 64,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1961,
+        "match_id": 67,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1962,
+        "match_id": 67,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 42,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1963,
+        "match_id": 67,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 455,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1964,
+        "match_id": 67,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 47,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1965,
+        "match_id": 67,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 85,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1966,
+        "match_id": 68,
+        "team_id": "GHA",
+        "player": null,
+        "minute": 905,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1967,
+        "match_id": 62,
+        "team_id": "COL",
+        "player": null,
+        "minute": 40,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1968,
+        "match_id": 62,
+        "team_id": "UZB",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1969,
+        "match_id": 62,
+        "team_id": "COL",
+        "player": null,
+        "minute": 65,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1970,
+        "match_id": 62,
+        "team_id": "COL",
+        "player": null,
+        "minute": 909,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2314,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 29,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2315,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 453,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2316,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 64,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2317,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 75,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 2318,
+        "match_id": 10,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 902,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1534,
+        "match_id": 49,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1535,
+        "match_id": 49,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1536,
+        "match_id": 49,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 905,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1537,
+        "match_id": 49,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 906,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1538,
+        "match_id": 50,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 29,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1539,
+        "match_id": 50,
+        "team_id": "IRQ",
+        "player": null,
+        "minute": 39,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2319,
+        "match_id": 4,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 50,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4194,
+        "match_id": 12,
+        "team_id": "BIH",
+        "player": null,
+        "minute": 80,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4198,
+        "match_id": 18,
+        "team_id": "HAI",
+        "player": null,
+        "minute": 10,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 4199,
+        "match_id": 18,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 39,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3208,
+        "match_id": 34,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 4,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3209,
+        "match_id": 34,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3210,
+        "match_id": 34,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 69,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3211,
+        "match_id": 34,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 83,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3212,
+        "match_id": 45,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 10,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3213,
+        "match_id": 45,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3214,
+        "match_id": 45,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 24,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3215,
+        "match_id": 45,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 49,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 1540,
+        "match_id": 50,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 43,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1541,
+        "match_id": 50,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 76,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1542,
+        "match_id": 50,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 906,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 1543,
+        "match_id": 55,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 17,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1544,
+        "match_id": 55,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 1545,
+        "match_id": 55,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 76,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3216,
+        "match_id": 46,
+        "team_id": "CPV",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3217,
+        "match_id": 46,
+        "team_id": "URU",
+        "player": null,
+        "minute": 44,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3218,
+        "match_id": 46,
+        "team_id": "URU",
+        "player": null,
+        "minute": 456,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3219,
+        "match_id": 46,
+        "team_id": "CPV",
+        "player": null,
+        "minute": 61,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3220,
+        "match_id": 40,
+        "team_id": "NZL",
+        "player": null,
+        "minute": 15,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3221,
+        "match_id": 40,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 58,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3222,
+        "match_id": 40,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3223,
+        "match_id": 40,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4200,
+        "match_id": 18,
+        "team_id": "HAI",
+        "player": null,
+        "minute": 43,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4201,
+        "match_id": 18,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 451,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4202,
+        "match_id": 18,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 78,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4203,
+        "match_id": 18,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 89,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4207,
+        "match_id": 5,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 55,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4208,
+        "match_id": 5,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 61,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4209,
+        "match_id": 5,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 904,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4587,
+        "match_id": 29,
+        "team_id": "CIV",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4588,
+        "match_id": 29,
+        "team_id": "CIV",
+        "player": null,
+        "minute": 64,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4592,
+        "match_id": 35,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 56,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4593,
+        "match_id": 35,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 62,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4598,
+        "match_id": 23,
+        "team_id": "USA",
+        "player": null,
+        "minute": 3,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4599,
+        "match_id": 23,
+        "team_id": "TUR",
+        "player": null,
+        "minute": 10,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4600,
+        "match_id": 23,
+        "team_id": "TUR",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4601,
+        "match_id": 23,
+        "team_id": "USA",
+        "player": null,
+        "minute": 49,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4602,
+        "match_id": 23,
+        "team_id": "TUR",
+        "player": null,
+        "minute": 908,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2821,
+        "match_id": 33,
+        "team_id": "NED",
+        "player": null,
+        "minute": 5,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2822,
+        "match_id": 33,
+        "team_id": "NED",
+        "player": null,
+        "minute": 17,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2823,
+        "match_id": 33,
+        "team_id": "NED",
+        "player": null,
+        "minute": 47,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2824,
+        "match_id": 33,
+        "team_id": "NED",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2825,
+        "match_id": 33,
+        "team_id": "SWE",
+        "player": null,
+        "minute": 59,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2826,
+        "match_id": 33,
+        "team_id": "NED",
+        "player": null,
+        "minute": 89,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2827,
+        "match_id": 27,
+        "team_id": "CIV",
+        "player": null,
+        "minute": 30,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2828,
+        "match_id": 27,
+        "team_id": "GER",
+        "player": null,
+        "minute": 68,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2829,
+        "match_id": 27,
+        "team_id": "GER",
+        "player": null,
+        "minute": 904,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2505,
+        "match_id": 21,
+        "team_id": "USA",
+        "player": null,
+        "minute": 11,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 2506,
+        "match_id": 21,
+        "team_id": "USA",
+        "player": null,
+        "minute": 43,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2507,
+        "match_id": 15,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 2,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2508,
+        "match_id": 16,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 23,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2509,
+        "match_id": 16,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2510,
+        "match_id": 16,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 453,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 2511,
+        "match_id": 22,
+        "team_id": "PAR",
+        "player": null,
+        "minute": 2,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4195,
+        "match_id": 11,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 46,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4196,
+        "match_id": 11,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 57,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4197,
+        "match_id": 11,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 76,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4204,
+        "match_id": 17,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4205,
+        "match_id": 17,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 453,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4206,
+        "match_id": 17,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4210,
+        "match_id": 6,
+        "team_id": "RSA",
+        "player": null,
+        "minute": 63,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4589,
+        "match_id": 30,
+        "team_id": "GER",
+        "player": null,
+        "minute": 2,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4590,
+        "match_id": 30,
+        "team_id": "ECU",
+        "player": null,
+        "minute": 9,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4591,
+        "match_id": 30,
+        "team_id": "ECU",
+        "player": null,
+        "minute": 77,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4594,
+        "match_id": 36,
+        "team_id": "NED",
+        "player": null,
+        "minute": 3,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 3715,
+        "match_id": 63,
+        "team_id": "POR",
+        "player": null,
+        "minute": 6,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3716,
+        "match_id": 63,
+        "team_id": "POR",
+        "player": null,
+        "minute": 17,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3717,
+        "match_id": 63,
+        "team_id": "POR",
+        "player": null,
+        "minute": 39,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3718,
+        "match_id": 63,
+        "team_id": "POR",
+        "player": null,
+        "minute": 60,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 3719,
+        "match_id": 63,
+        "team_id": "POR",
+        "player": null,
+        "minute": 87,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3720,
+        "match_id": 70,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 3721,
+        "match_id": 64,
+        "team_id": "COL",
+        "player": null,
+        "minute": 76,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4595,
+        "match_id": 36,
+        "team_id": "NED",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4596,
+        "match_id": 36,
+        "team_id": "TUN",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 4597,
+        "match_id": 36,
+        "team_id": "NED",
+        "player": null,
+        "minute": 62,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6323,
+        "match_id": 84,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6324,
+        "match_id": 84,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6325,
+        "match_id": 84,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 89,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6326,
+        "match_id": 83,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 53,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6327,
+        "match_id": 83,
+        "team_id": "POR",
+        "player": null,
+        "minute": 68,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 6328,
+        "match_id": 83,
+        "team_id": "POR",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6329,
+        "match_id": 85,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 10,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6330,
+        "match_id": 85,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 46,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7103,
+        "match_id": 95,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 15,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7104,
+        "match_id": 95,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7105,
+        "match_id": 95,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 79,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7106,
+        "match_id": 95,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 83,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7107,
+        "match_id": 95,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7814,
+        "match_id": 104,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 106,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6131,
+        "match_id": 80,
+        "team_id": "COD",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5494,
+        "match_id": 73,
+        "team_id": "CAN",
+        "player": null,
+        "minute": 902,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6132,
+        "match_id": 80,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 75,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6133,
+        "match_id": 80,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 86,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6134,
+        "match_id": 82,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 24,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6135,
+        "match_id": 82,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 51,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6136,
+        "match_id": 82,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 86,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6137,
+        "match_id": 82,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 89,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6138,
+        "match_id": 82,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 120,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 6139,
+        "match_id": 81,
+        "team_id": "USA",
+        "player": null,
+        "minute": 45,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6140,
+        "match_id": 81,
+        "team_id": "USA",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5014,
+        "match_id": 53,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 7,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5015,
+        "match_id": 53,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 20,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5016,
+        "match_id": 53,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 21,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5017,
+        "match_id": 53,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 32,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5018,
+        "match_id": 53,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 904,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5019,
+        "match_id": 54,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 4,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5020,
+        "match_id": 54,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 56,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5021,
+        "match_id": 54,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 59,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5022,
+        "match_id": 54,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 71,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5023,
+        "match_id": 54,
+        "team_id": "SEN",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5024,
+        "match_id": 48,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 42,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5025,
+        "match_id": 41,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 5,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5026,
+        "match_id": 41,
+        "team_id": "IRN",
+        "player": null,
+        "minute": 14,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5027,
+        "match_id": 42,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 28,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5028,
+        "match_id": 42,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 50,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5029,
+        "match_id": 42,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5030,
+        "match_id": 42,
+        "team_id": "NZL",
+        "player": null,
+        "minute": 84,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5031,
+        "match_id": 42,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 86,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5032,
+        "match_id": 42,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 904,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7461,
+        "match_id": 101,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 22,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 7462,
+        "match_id": 101,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 58,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7242,
+        "match_id": 98,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 30,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7243,
+        "match_id": 98,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 41,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7244,
+        "match_id": 98,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 88,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5431,
+        "match_id": 72,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5432,
+        "match_id": 72,
+        "team_id": "GHA",
+        "player": null,
+        "minute": 73,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5433,
+        "match_id": 72,
+        "team_id": "CRO",
+        "player": null,
+        "minute": 83,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5434,
+        "match_id": 71,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 62,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5435,
+        "match_id": 71,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5436,
+        "match_id": 66,
+        "team_id": "UZB",
+        "player": null,
+        "minute": 10,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5437,
+        "match_id": 66,
+        "team_id": "COD",
+        "player": null,
+        "minute": 68,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 5438,
+        "match_id": 66,
+        "team_id": "COD",
+        "player": null,
+        "minute": 78,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5439,
+        "match_id": 66,
+        "team_id": "COD",
+        "player": null,
+        "minute": 901,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5440,
+        "match_id": 59,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 28,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5441,
+        "match_id": 59,
+        "team_id": "ALG",
+        "player": null,
+        "minute": 45,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5442,
+        "match_id": 59,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 55,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5443,
+        "match_id": 59,
+        "team_id": "ALG",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5444,
+        "match_id": 59,
+        "team_id": "ALG",
+        "player": null,
+        "minute": 903,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5445,
+        "match_id": 59,
+        "team_id": "AUT",
+        "player": null,
+        "minute": 906,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5446,
+        "match_id": 60,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 19,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5447,
+        "match_id": 60,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 5448,
+        "match_id": 60,
+        "team_id": "JOR",
+        "player": null,
+        "minute": 55,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6811,
+        "match_id": 91,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 79,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6812,
+        "match_id": 91,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6813,
+        "match_id": 91,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 6814,
+        "match_id": 92,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6815,
+        "match_id": 92,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 38,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5449,
+        "match_id": 60,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 80,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6816,
+        "match_id": 92,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 42,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6817,
+        "match_id": 92,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 6818,
+        "match_id": 92,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 69,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 5881,
+        "match_id": 78,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 39,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5882,
+        "match_id": 78,
+        "team_id": "CIV",
+        "player": null,
+        "minute": 74,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5883,
+        "match_id": 78,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 86,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5884,
+        "match_id": 77,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 45,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5885,
+        "match_id": 77,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 53,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7166,
+        "match_id": 97,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 60,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7167,
+        "match_id": 97,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7395,
+        "match_id": 99,
+        "team_id": "NOR",
+        "player": null,
+        "minute": 36,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5669,
+        "match_id": 76,
+        "team_id": "JPN",
+        "player": null,
+        "minute": 29,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5670,
+        "match_id": 76,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 56,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5671,
+        "match_id": 76,
+        "team_id": "BRA",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5672,
+        "match_id": 74,
+        "team_id": "PAR",
+        "player": null,
+        "minute": 42,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5673,
+        "match_id": 74,
+        "team_id": "GER",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5674,
+        "match_id": 75,
+        "team_id": "NED",
+        "player": null,
+        "minute": 72,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5675,
+        "match_id": 75,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5886,
+        "match_id": 77,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 74,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5887,
+        "match_id": 79,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 22,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 5888,
+        "match_id": 79,
+        "team_id": "MEX",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7396,
+        "match_id": 99,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 45,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7397,
+        "match_id": 99,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 93,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7398,
+        "match_id": 100,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 10,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7399,
+        "match_id": 100,
+        "team_id": "SUI",
+        "player": null,
+        "minute": 67,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7400,
+        "match_id": 100,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 112,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7401,
+        "match_id": 100,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 120,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6630,
+        "match_id": 90,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 50,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6524,
+        "match_id": 88,
+        "team_id": "EGY",
+        "player": null,
+        "minute": 13,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6525,
+        "match_id": 88,
+        "team_id": "AUS",
+        "player": null,
+        "minute": 55,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 6526,
+        "match_id": 86,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 29,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6631,
+        "match_id": 90,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 82,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6632,
+        "match_id": 90,
+        "team_id": "MAR",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6633,
+        "match_id": 89,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 70,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 6527,
+        "match_id": 86,
+        "team_id": "CPV",
+        "player": null,
+        "minute": 59,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6528,
+        "match_id": 86,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 92,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6529,
+        "match_id": 86,
+        "team_id": "CPV",
+        "player": null,
+        "minute": 103,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6530,
+        "match_id": 86,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 111,
+        "own_goal": true,
+        "penalty": false
+    },
+    {
+        "id": 6531,
+        "match_id": 87,
+        "team_id": "COL",
+        "player": null,
+        "minute": 14,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6977,
+        "match_id": 93,
+        "team_id": "ESP",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6978,
+        "match_id": 94,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 9,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7535,
+        "match_id": 102,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 55,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6979,
+        "match_id": 94,
+        "team_id": "USA",
+        "player": null,
+        "minute": 31,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6980,
+        "match_id": 94,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 33,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6981,
+        "match_id": 94,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 57,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 6982,
+        "match_id": 94,
+        "team_id": "BEL",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7536,
+        "match_id": 102,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 85,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7537,
+        "match_id": 102,
+        "team_id": "ARG",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7782,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 3,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7783,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 18,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7784,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 37,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7785,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 45,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7786,
+        "match_id": 103,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 48,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7787,
+        "match_id": 103,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 54,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7788,
+        "match_id": 103,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 66,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7789,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 87,
+        "own_goal": false,
+        "penalty": true
+    },
+    {
+        "id": 7790,
+        "match_id": 103,
+        "team_id": "FRA",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    },
+    {
+        "id": 7791,
+        "match_id": 103,
+        "team_id": "ENG",
+        "player": null,
+        "minute": 90,
+        "own_goal": false,
+        "penalty": false
+    }
+]
